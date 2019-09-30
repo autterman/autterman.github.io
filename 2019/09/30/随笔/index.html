@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>leet_650_只有两个键的键盘 | Hexo</title>
+  <title>第一篇博客测试 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
+  <meta name="description" content="明天国庆放假">
 <meta name="keywords" content="随笔">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leet_650_只有两个键的键盘">
-<meta property="og:url" content="http://yoursite.com/2019/02/01/随笔/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
+<meta property="og:title" content="第一篇博客测试">
+<meta property="og:url" content="http://yoursite.com/2019/09/30/随笔/index.html">
+<meta property="og:site_name" content="Autter">
+<meta property="og:description" content="明天国庆放假">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-09-30T02:42:14.611Z">
+<meta property="og:updated_time" content="2019-09-30T06:14:15.314Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leet_650_只有两个键的键盘">
-<meta name="twitter:description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
+<meta name="twitter:title" content="第一篇博客测试">
+<meta name="twitter:description" content="明天国庆放假">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
   
     <link rel="icon" href="/img/geekc.png">
@@ -169,11 +169,11 @@
       <header class="article-header">
         
         
-        <a href="/2019/02/01/随笔/" class="archive-article-date >
+        <a href="/2019/09/30/随笔/" class="archive-article-date >
 
 
 
-  	<time datetime="2019-02-01T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2019-09-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-30</time>
 </a>
         <!--显示阅读次数-->
         
@@ -194,20 +194,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="leet-650-只有两个键的键盘"><a href="#leet-650-只有两个键的键盘" class="headerlink" title="leet_650_只有两个键的键盘"></a>leet_650_只有两个键的键盘</h1><p>  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作：</p>
-<pre><code>Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。
-Paste (粘贴) : 你可以粘贴你上一次复制的字符。
-给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &apos;A&apos;。输出能够打印出 n 个 &apos;A&apos; 的最少操作次数。</code></pre><p>示例 1:</p>
-<p>输入: 3<br>输出: 3<br>解释:<br>        最初, 我们只有一个字符 ‘A’。<br>        第 1 步, 我们使用 Copy All 操作。<br>        第 2 步, 我们使用 Paste 操作来获得 ‘AA’。<br>        第 3 步, 我们使用 Paste 操作来获得 ‘AAA’。</p>
-<p>注意：    n 的取值范围是 [1, 1000] 。</p>
-<a id="more"></a>  
-<p>方法一：如果 n 为素数，那么 op = n,<br>              否则，求 乘积为 n 的所有素数 ，如 n = 15 , 3*5 =15, op = 3 + 5 ,问题转化为求素数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSteps</span><span class="params">(self, n)</span>:</span> </span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.get_all_divprimers(n)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_all_divprimers</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        res, i = [],<span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> i &lt;= int(pow(n,<span class="number">0.5</span>)):</span><br><span class="line">            <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">                res.append(i)</span><br><span class="line">                n , i = n/i, <span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">        res.append(n)</span><br><span class="line">        print(sum(res))</span><br><span class="line">        <span class="keyword">return</span> sum(res)</span><br></pre></td></tr></table></figure>
-
-<p>**分析:想要减少操作数，我们就尽可能的一次复制较大长度的，但是注意，复制的这个长度值一旦增加，就无法变小，注意最后复制粘贴的构成的总长度恰好是n。所以，我们首先判断n 是不是质数，如果是，只能一个一个字符粘贴了，op 数 就是 n 。 如果不是，说明可以通过一个相对大的长度复制粘贴。<br>    如 n = 9, 那么，9 可由 3粘贴三次得到。     </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bigchu</span><span class="params">(self,s)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,int(s/<span class="number">2</span>)):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> s%i:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSteps</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        sum = <span class="number">0</span></span><br><span class="line">        chu = self.bigchu(n)</span><br><span class="line">        <span class="keyword">while</span> n&gt;<span class="number">4</span> <span class="keyword">and</span> chu :</span><br><span class="line">            sum+=chu</span><br><span class="line">            n /=chu</span><br><span class="line">            chu = self.bigchu(n)</span><br><span class="line">        <span class="keyword">return</span> sum+n</span><br></pre></td></tr></table></figure>
-
-
+        <h1 id="明天国庆放假"><a href="#明天国庆放假" class="headerlink" title="明天国庆放假"></a>明天国庆放假</h1>
       
 
       
@@ -297,7 +284,7 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/02/01/随笔/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/30/随笔/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -311,15 +298,11 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
   
 <nav id="article-nav">
   
-    <a href="/2019/02/01/测试博客/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          leet_650_只有两个键的键盘
-        
-      </div>
-    </a>
   
+    <a href="/2019/02/01/测试博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leet_650_只有两个键的键盘</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -344,7 +327,7 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leet-650-只有两个键的键盘"><span class="toc-number">1.</span> <span class="toc-text">leet_650_只有两个键的键盘</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#明天国庆放假"><span class="toc-number">1.</span> <span class="toc-text">明天国庆放假</span></a></li></ol>
                     </div>
                 </span>
             </div>
