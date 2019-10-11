@@ -8,13 +8,20 @@
   <link rel="dns-prefetch" href="http://www.autterman.cn">
   <title>Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="题目描述给定一个嵌套的整型列表。设计一个迭代器，使其能够遍历这个整型列表中的所有整数。 列表中的项或者为一个整数，或者是另一个列表。 python1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859# &quot;&quot;&quot;# This is the">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Autter">
-<meta property="og:url" content="http://www.autterman.cn/index.html">
+<meta property="og:url" content="http://www.autterman.cn/2019/10/11/leetcode_341. 扁平化嵌套列表迭代器/index.html">
 <meta property="og:site_name" content="Autter">
+<meta property="og:description" content="题目描述给定一个嵌套的整型列表。设计一个迭代器，使其能够遍历这个整型列表中的所有整数。 列表中的项或者为一个整数，或者是另一个列表。 python1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859# &quot;&quot;&quot;# This is the">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191011103907189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20191011103923167.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-10-11T02:41:50.764Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Autter">
+<meta name="twitter:description" content="题目描述给定一个嵌套的整型列表。设计一个迭代器，使其能够遍历这个整型列表中的所有整数。 列表中的项或者为一个整数，或者是另一个列表。 python1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859# &quot;&quot;&quot;# This is the">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191011103907189.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -156,9 +163,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-leetcode_341. 扁平化嵌套列表迭代器" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-leetcode_341. 扁平化嵌套列表迭代器" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -175,6 +180,27 @@
       
 
       
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
     <div class="article-info article-info-index">
       
@@ -182,16 +208,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/11/leetcode_341. 扁平化嵌套列表迭代器/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2019/10/11/leetcode_341. 扁平化嵌套列表迭代器/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/10/10/leetcode227-基本计算器ii/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode227.基本计算器ii</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -206,10 +291,54 @@
         </div>
         
         
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#python"><span class="toc-number">2.</span> <span class="toc-text">python</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#java"><span class="toc-number">3.</span> <span class="toc-text">java</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
     </div>
 </aside>
 
 
+
+  
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "Just go go go",
+            avatar:"mm"
+        });
+    }
+</script>
+    
+
+  
+  
+  
+
+  
+
+  
+
+  
 
 
 
@@ -237,223 +366,6 @@
     }
 </script>
   </section>
-
-  
-    <article id="post-leetcode227-基本计算器ii" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/10/10/leetcode227-基本计算器ii/" class="archive-article-date >
-
-
-
-  	<time datetime="2019-10-10T01:58:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="leet-227-基本计算器"><a href="#leet-227-基本计算器" class="headerlink" title="leet_227_基本计算器"></a>leet_227_基本计算器</h1><p>实现一个基本的计算器来计算一个简单的字符串表达式的值。<br>字符串表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格  。 整数除法仅保留整数部分。<br><img src="https://img-blog.csdnimg.cn/20191010093340276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>分析：直接法，更具运算法则，先计算乘除法， 在计算加减法。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/10/10/leetcode227-基本计算器ii/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "Just go go go",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-测试博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-      <header class="article-header">
-        
-        
-        <a href="/2019/02/01/测试博客/" class="archive-article-date >
-
-
-
-  	<time datetime="2019-02-01T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="leet-650-只有两个键的键盘"><a href="#leet-650-只有两个键的键盘" class="headerlink" title="leet_650_只有两个键的键盘"></a>leet_650_只有两个键的键盘</h1><p>  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作：</p>
-<pre><code>Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。
-Paste (粘贴) : 你可以粘贴你上一次复制的字符。
-给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &apos;A&apos;。输出能够打印出 n 个 &apos;A&apos; 的最少操作次数。</code></pre><p>示例 1:</p>
-<p>输入: 3<br>输出: 3<br>解释:<br>        最初, 我们只有一个字符 ‘A’。<br>        第 1 步, 我们使用 Copy All 操作。<br>        第 2 步, 我们使用 Paste 操作来获得 ‘AA’。<br>        第 3 步, 我们使用 Paste 操作来获得 ‘AAA’。</p>
-<p>注意：    n 的取值范围是 [1, 1000] 。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">简单</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/02/01/测试博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "Just go go go",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-  
-
 
           </div>
         </div>
@@ -507,8 +419,8 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
