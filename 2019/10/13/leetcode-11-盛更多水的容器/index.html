@@ -17,7 +17,7 @@
 <meta property="og:description" content="leetcode_11_盛更多水的容器给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191013102803584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-10-13T02:44:52.030Z">
+<meta property="og:updated_time" content="2019-10-13T02:45:55.244Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_11_盛更多水的容器">
 <meta name="twitter:description" content="leetcode_11_盛更多水的容器给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。 说明：你不能倾斜容器，且 n 的值至少为 2。">
@@ -215,7 +215,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="leetcode-11-盛更多水的容器"><a href="#leetcode-11-盛更多水的容器" class="headerlink" title="leetcode_11_盛更多水的容器"></a>leetcode_11_盛更多水的容器</h1><p>给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
+        <h2 id="leetcode-11-盛更多水的容器"><a href="#leetcode-11-盛更多水的容器" class="headerlink" title="leetcode_11_盛更多水的容器"></a>leetcode_11_盛更多水的容器</h2><p>给定 n 个非负整数 a1，a2，…，an，每个数代表坐标中的一个点 (i, ai) 。在坐标内画 n 条垂直线，垂直线 i 的两个端点分别为 (i, ai) 和 (i, 0)。找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
 <p>说明：你不能倾斜容器，且 n 的值至少为 2。<br><img src="https://img-blog.csdnimg.cn/20191013102803584.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <a id="more"></a> 
 <p>目标：找出最大的一组(i,j)， 是的Area 最大！<br>    Area =max(min(height[i],height[j])<em>(j-i))   其中 0 &lt; i &lt; j &lt; height.size()<br>双指针: 基本的表达式为 Area =min(height[i],height[j])</em>(j-i)，使用两个指针，<br>        值小的就向内移动，这样就减小了搜索空间，因为area 取决于指针间的距离和较小的那个值的乘积，<br>        如果值大的值指针向内移动，那么area 一定减小。<br>‘’’</p>
@@ -356,7 +356,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leetcode-11-盛更多水的容器"><span class="toc-number">1.</span> <span class="toc-text">leetcode_11_盛更多水的容器</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-11-盛更多水的容器"><span class="toc-number">1.</span> <span class="toc-text">leetcode_11_盛更多水的容器</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -561,11 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
