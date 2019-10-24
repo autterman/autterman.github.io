@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191024143502541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-10-24T07:08:31.772Z">
+<meta property="og:updated_time" content="2019-10-24T07:12:39.291Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leet_code_658.找到K个最接近的元素">
 <meta name="twitter:description" content="leet_code_658.找到K个最接近的元素题目给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。">
@@ -217,7 +217,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="leet-code-658-找到K个最接近的元素"><a href="#leet-code-658-找到K个最接近的元素" class="headerlink" title="leet_code_658.找到K个最接近的元素"></a>leet_code_658.找到K个最接近的元素</h3><h5 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h5><p>给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。</p>
-<a id="more"></a>
+<a id="more"></a> 
 <p><img src="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20191024143502541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>方法一：删除法<br>从两端遍历数组，比较头尾数组元素与 x 的距离，哪端距离大，哪端数组出栈，直到出栈后的数组长度为k 。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment">#删除法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findClosestElements</span><span class="params">(self,arr, k, x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k == len(arr):</span><br><span class="line">    	<span class="keyword">return</span> arr</span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">while</span> len(arr) != k:</span><br><span class="line">    	ldistance = abs(arr[<span class="number">0</span>] - x)</span><br><span class="line">    	rdistance = abs(arr[<span class="number">-1</span>] -x)</span><br><span class="line">    	<span class="keyword">if</span> ldistance &gt; rdistance:</span><br><span class="line">    		arr.pop(<span class="number">0</span>)</span><br><span class="line">    	<span class="keyword">else</span> :</span><br><span class="line">    		arr.pop(<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
 
@@ -578,15 +578,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
