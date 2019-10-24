@@ -158,6 +158,117 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leet-code-658-找到K个最接近的元素" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2019/10/24/leet-code-658-找到K个最接近的元素/" class="archive-article-date >
+
+
+
+  	<time datetime="2019-10-24T06:57:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。<br><img src="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20191024143502541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>方法一：删除法<br>从两端遍历数组，比较头尾数组元素与 x 的距离，哪端距离大，哪端数组出栈，直到出栈后的数组长度为k 。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Solution(object):</span><br><span class="line">    #删除法</span><br><span class="line">    <span class="function">def <span class="title">findClosestElements</span><span class="params">(self,arr, k, x)</span>:</span></span><br><span class="line"><span class="function">    <span class="keyword">if</span> k </span>== len(arr):</span><br><span class="line">    	<span class="keyword">return</span> arr</span><br><span class="line">    res = []</span><br><span class="line">    <span class="function"><span class="keyword">while</span> <span class="title">len</span><span class="params">(arr)</span> !</span>= k:</span><br><span class="line">    	ldistance = abs(arr[<span class="number">0</span>] - x)</span><br><span class="line">    	rdistance = abs(arr[-<span class="number">1</span>] -x)</span><br><span class="line">    	<span class="keyword">if</span> ldistance &gt; rdistance:</span><br><span class="line">    		arr.pop(<span class="number">0</span>)</span><br><span class="line">    	<span class="keyword">else</span> :</span><br><span class="line">    		arr.pop(-<span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
+
+<p>方法二：二分法查找最优区间的左边界<br>分析：如果mid 是左边界，则当前区间覆盖的范围是 [mid, mid + k -1]. 如果发现 a[mid] 与 x 距离比 a[mid + k] 与 x 的距离要大，说明解一定在右侧。</p>
+<h6 id="python"><a href="#python" class="headerlink" title="python"></a>python</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment">#删除法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findClosestElements</span><span class="params">(self,arr, k, x)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> k == len(arr):</span><br><span class="line">            <span class="keyword">return</span> arr</span><br><span class="line">        left ,right = <span class="number">0</span>,len(arr) -k</span><br><span class="line">        <span class="keyword">while</span> left &lt; right :</span><br><span class="line">            mid = (left + right) &gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> abs(arr[mid] - x) &gt; abs(arr[mid + k] -x):  <span class="comment"># x 靠近区间右端，区间右移</span></span><br><span class="line">                left = mid + <span class="number">1</span> </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid </span><br><span class="line">        <span class="keyword">return</span> arr[left:left+k]</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分法的最优区间的边界问题</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">双指针法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/24/leet-code-658-找到K个最接近的元素/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "Just go go go",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-leetcode-300-最长子序列问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
@@ -683,6 +794,112 @@
   </section>
 
   
+    <article id="post-leetcode227-基本计算器ii" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2019/10/10/leetcode227-基本计算器ii/" class="archive-article-date >
+
+
+
+  	<time datetime="2019-10-10T01:58:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-10</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="leet-227-基本计算器"><a href="#leet-227-基本计算器" class="headerlink" title="leet_227_基本计算器"></a>leet_227_基本计算器</h1><p>实现一个基本的计算器来计算一个简单的字符串表达式的值。<br>字符串表达式仅包含非负整数，+， - ，*，/ 四种运算符和空格  。 整数除法仅保留整数部分。<br><img src="https://img-blog.csdnimg.cn/20191010093340276.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>分析：直接法，更具运算法则，先计算乘除法， 在计算加减法。</p>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">字符串</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/10/leetcode227-基本计算器ii/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "Just go go go",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-测试博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
@@ -917,11 +1134,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">中等</a>
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -933,11 +1150,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简单</a>
+                <a href="javascript:void(0)" class="js-tag color3">中等</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -945,7 +1170,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
+                <a href="javascript:void(0)" class="js-tag color3">简单</a>
               </li>
             
             <div class="clearfix"></div>
