@@ -18,7 +18,7 @@
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191023145144557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191023145422772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-10-23T12:26:15.828Z">
+<meta property="og:updated_time" content="2020-02-26T10:12:02.558Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_300_最长子序列问题">
 <meta name="twitter:description" content="leetcode_300_最长子序列问题">
@@ -219,13 +219,13 @@
         <h1 id="leetcode-300-最长子序列问题"><a href="#leetcode-300-最长子序列问题" class="headerlink" title="leetcode_300_最长子序列问题"></a>leetcode_300_最长子序列问题</h1><p><img src="https://img-blog.csdnimg.cn/20191023145144557.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <a id="more"></a>
 <p>分析：动态规划<br>定义：dp[0,…i-1] ，dp[i]定义为以num[i] 元素结尾的子序列的最大长度。<br>例如：<img src="https://img-blog.csdnimg.cn/20191023145422772.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>状态转移方程：<br>dp[i] = max( 1  + dp[j]  if i &gt; j and nums[i] &gt; nums[j])</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">    	dp = [<span class="number">1</span>] * len(nums)</span><br><span class="line">    	<span class="keyword">if</span> len(nums) &lt; <span class="number">1</span> :</span><br><span class="line">    		<span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">		<span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(nums)):</span><br><span class="line">			<span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">				<span class="keyword">if</span> nums[i] &gt;nums[j]:</span><br><span class="line">					dp[i] = max(dp[j]+<span class="number">1</span> ,dp[i])</span><br><span class="line">		<span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(nums)</span>:</span></span><br><span class="line">    dp = [<span class="number">1</span>] * len(nums)</span><br><span class="line">    <span class="keyword">if</span> len(nums) &lt; <span class="number">1</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>,len(nums)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i):</span><br><span class="line">            <span class="keyword">if</span> nums[i] &gt;nums[j]:</span><br><span class="line">                dp[i] = max(dp[j]+<span class="number">1</span> ,dp[i])</span><br><span class="line">    <span class="keyword">return</span> max(dp)</span><br></pre></td></tr></table></figure>
 
 <p>解法二：二分法 + DP</p>
 <h1 id="算法思想："><a href="#算法思想：" class="headerlink" title="算法思想："></a>算法思想：</h1><pre><code>新建数组cell，用于保存最长上升子序列
 对原序列进行遍历，将每一个元素二分插入cell 中。
-    - 如果cell 中元素都比它小，直接查到cell 最后.\
-    -否则，用它覆盖比它大的元素中最小的那个。 
+    - 如果cell 中元素都比它小，直接查到cell 最后，然后插入。
+    -否则，用它覆盖比它大的元素中最小的那个，比它大的只有一个，那就替换cell尾元素。 
 总之，思想就是让 cell 中存储比较小的元素。这样，cell 未必是真实的最长上升子序列，但长度是对的。</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">lengthOfLIS</span><span class="params">(self,nums)</span>:</span></span><br><span class="line">      <span class="keyword">if</span> len(nums) ==<span class="number">0</span> :</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">      cell = [nums[<span class="number">0</span>]]</span><br><span class="line">      <span class="keyword">for</span> num <span class="keyword">in</span> nums[<span class="number">1</span>:]:</span><br><span class="line">          <span class="keyword">if</span> num &gt; cell[<span class="number">-1</span>]:</span><br><span class="line">              cell.append(num)</span><br><span class="line">              <span class="keyword">continue</span></span><br><span class="line">          l,r = <span class="number">0</span> ,len(cell) - <span class="number">1</span> </span><br><span class="line">          <span class="keyword">while</span> l &lt; r : </span><br><span class="line">              mid = l + (r - l )//<span class="number">2</span></span><br><span class="line">              <span class="keyword">if</span> cell[mid] &lt; num: </span><br><span class="line">                  l = mid + <span class="number">1</span></span><br><span class="line">              <span class="keyword">else</span>:</span><br><span class="line">                  r = mid</span><br><span class="line">          cell[l] = num</span><br><span class="line">      <span class="keyword">return</span> len(cell)</span><br></pre></td></tr></table></figure>
 
 
@@ -448,7 +448,7 @@
   <div class="outer">
     <div id="footer-info">
         <div class="footer-left">
-            &copy; 2019 autter - <a href="http://www.miitbeian.gov.cn/" target="_blank">待备案</a>
+            &copy; 2020 autter - <a href="http://www.miitbeian.gov.cn/" target="_blank">待备案</a>
         </div>
         <div class="footer-middle">
             
@@ -571,15 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -591,11 +587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,6 +600,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
               </li>
              
               <li class="article-tag-list-item">
