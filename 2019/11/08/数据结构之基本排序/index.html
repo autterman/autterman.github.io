@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>Autter</title>
+  <title>算法之排序系列 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="算法之排序系列昨天参加了我人生的第一场工作实习面试，略带紧张，忐忑过关，感谢把资源推荐给我的同门，其他的不多说了，多谢扶持，共同进步，明年一起回来一起搞论文。过程中问了两道基本的算法题，一道快排，一道DP(leetcode_300.最长上升子序列的长度),回答时坑坑巴巴，逻辑不清楚，在这里重新总结下一些基本的排序算法。">
+<meta name="keywords" content="面试总结,手撕算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Autter">
+<meta property="og:title" content="算法之排序系列">
 <meta property="og:url" content="http://www.autterman.cn/2019/11/08/数据结构之基本排序/index.html">
 <meta property="og:site_name" content="Autter">
 <meta property="og:description" content="算法之排序系列昨天参加了我人生的第一场工作实习面试，略带紧张，忐忑过关，感谢把资源推荐给我的同门，其他的不多说了，多谢扶持，共同进步，明年一起回来一起搞论文。过程中问了两道基本的算法题，一道快排，一道DP(leetcode_300.最长上升子序列的长度),回答时坑坑巴巴，逻辑不清楚，在这里重新总结下一些基本的排序算法。">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20191108094349610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-11-08T08:23:36.130Z">
+<meta property="og:updated_time" content="2020-03-14T13:08:12.042Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Autter">
+<meta name="twitter:title" content="算法之排序系列">
 <meta name="twitter:description" content="算法之排序系列昨天参加了我人生的第一场工作实习面试，略带紧张，忐忑过关，感谢把资源推荐给我的同门，其他的不多说了，多谢扶持，共同进步，明年一起回来一起搞论文。过程中问了两道基本的算法题，一道快排，一道DP(leetcode_300.最长上升子序列的长度),回答时坑坑巴巴，逻辑不清楚，在这里重新总结下一些基本的排序算法。">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191108094349610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
   
@@ -167,9 +168,54 @@
 
 
     
+      <header class="article-header">
+        
+        
+        <a href="/2019/11/08/数据结构之基本排序/" class="archive-article-date >
+
+
+
+  	<time datetime="2019-11-08T08:01:12.902Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-08</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+           
+        <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "Just go go go",
+            avatar:"mm"
+        });
+    }
+</script>
+      
+    
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+            <span class="icon-sort"></span>
+         
+            <span class="archive-article-date">
+                阅读量 <span id="busuanzi_value_page_pv"></span>
+            </span>
+          </a>
+        
+        
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="算法之排序系列"><a href="#算法之排序系列" class="headerlink" title="算法之排序系列"></a>算法之排序系列</h1><p>昨天参加了我人生的第一场工作实习面试，略带紧张，忐忑过关，感谢把资源推荐给我的同门，其他的不多说了，多谢扶持，共同进步，明年一起回来一起搞论文。<br>过程中问了两道基本的算法题，一道快排，一道DP(leetcode_300.最长上升子序列的长度),回答时坑坑巴巴，逻辑不清楚，在这里重新总结下一些基本的排序算法。</p>
+        <h4 id="算法之排序系列"><a href="#算法之排序系列" class="headerlink" title="算法之排序系列"></a>算法之排序系列</h4><p>昨天参加了我人生的第一场工作实习面试，略带紧张，忐忑过关，感谢把资源推荐给我的同门，其他的不多说了，多谢扶持，共同进步，明年一起回来一起搞论文。<br>过程中问了两道基本的算法题，一道快排，一道DP(leetcode_300.最长上升子序列的长度),回答时坑坑巴巴，逻辑不清楚，在这里重新总结下一些基本的排序算法。</p>
 <a id="more"></a>
 <p>数据结构排序的算法可以这样分为八个:<br><img src="https://img-blog.csdnimg.cn/20191108094349610.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h4 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h4><h5 id="基本思想：挖坑填数-分治法"><a href="#基本思想：挖坑填数-分治法" class="headerlink" title="基本思想：挖坑填数 + 分治法"></a>基本思想：挖坑填数 + 分治法</h5><ul>
@@ -226,7 +272,7 @@
             <span class="tooltip-content">
               <span class="tooltip-text">
                 <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就收藏噻<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
                     
@@ -242,6 +288,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">面试总结</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">手撕算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -344,7 +405,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#算法之排序系列"><span class="toc-number">1.</span> <span class="toc-text">算法之排序系列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本思想：挖坑填数-分治法"><span class="toc-number">1.0.0.1.1.</span> <span class="toc-text">基本思想：挖坑填数 + 分治法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#python实现"><span class="toc-number">1.0.0.1.1.1.</span> <span class="toc-text">python实现</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接插入排序"><span class="toc-number">1.1.</span> <span class="toc-text">直接插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单选择排序"><span class="toc-number">1.1.1.</span> <span class="toc-text">简单选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.1.1.1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#希尔排序"><span class="toc-number">1.1.1.2.</span> <span class="toc-text">希尔排序</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#算法之排序系列"><span class="toc-number">1.</span> <span class="toc-text">算法之排序系列</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#快速排序"><span class="toc-number">2.</span> <span class="toc-text">快速排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本思想：挖坑填数-分治法"><span class="toc-number">2.1.</span> <span class="toc-text">基本思想：挖坑填数 + 分治法</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#python实现"><span class="toc-number">2.1.1.</span> <span class="toc-text">python实现</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#直接插入排序"><span class="toc-number"></span> <span class="toc-text">直接插入排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#简单选择排序"><span class="toc-number"></span> <span class="toc-text">简单选择排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#冒泡排序"><span class="toc-number">1.</span> <span class="toc-text">冒泡排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#希尔排序"><span class="toc-number">2.</span> <span class="toc-text">希尔排序</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -545,18 +606,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
               </li>
              
@@ -573,7 +622,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -590,6 +651,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">手撕算法</a>
               </li>
             
             <div class="clearfix"></div>
