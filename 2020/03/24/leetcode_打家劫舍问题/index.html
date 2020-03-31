@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Autter">
 <meta property="og:description" content="打家劫舍问题题目描述你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-24T10:03:49.449Z">
+<meta property="og:updated_time" content="2020-03-25T07:44:39.012Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_打家劫舍问题">
 <meta name="twitter:description" content="打家劫舍问题题目描述你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。">
@@ -222,7 +222,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(self, nums)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type nums: List[int]</span></span><br><span class="line"><span class="string">        :rtype: int</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">     </span><br><span class="line">        n = len(nums)</span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span> :</span><br><span class="line">        	<span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span>: <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">        dp = [val <span class="keyword">for</span> val <span class="keyword">in</span> nums]</span><br><span class="line">        <span class="keyword">if</span> dp[<span class="number">0</span>] &gt;dp[<span class="number">1</span>]:</span><br><span class="line">        	dp[<span class="number">1</span>] = dp[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">        	dp[i] = max(dp[i<span class="number">-2</span>]+nums[i],dp[i],dp[i<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br></pre></td></tr></table></figure>
 
 <h2 id="打家劫舍2"><a href="#打家劫舍2" class="headerlink" title="打家劫舍2"></a>打家劫舍2</h2><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都围成一圈，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。<br>        给定一个代表每个房屋存放金额的非负整数数组，计算你在不触动警报装置的情况下，能够偷窃到的最高金额。</p>
-<p><strong>分析:</strong>相比打家劫舍1 ，增加了一个限制条件，就是，首尾元素不能同时出现。<br>DP 问题：<br>dp[i]定义:nums[0,,,,,i]的最多的金额集合;<br>分两种情况：1.带首元素的最优集合，2.带尾元素的最优集合；3.首尾元素都不带的最优集合。<br>状态转移方程：dp[i] = max(dp[i-1],dp[i-2]+nums[i])<br>base case: dp[0] = i,dp[1] =max(dp[0],dp[1])<br>‘’’</p>
+<p><strong>分析:</strong>相比打家劫舍1 ，增加了一个限制条件，就是，首尾元素不能同时出现。<br>DP 问题：<br>dp[i]定义:nums[0,,,,,i]的最多的金额集合;<br>分两种情况：1.带首元素的最优集合，2.带尾元素的最优集合；3.首尾元素都不带的最优集合。<br>状态转移方程：dp[i] = max(dp[i-1],dp[i-2]+nums[i])<br>base case: dp[0] = i,dp[1] =max(dp[0],dp[1])</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob_range</span><span class="params">(self,arr,left,right)</span>:</span></span><br><span class="line">        arr = arr[left:right]</span><br><span class="line">        n = len(arr)</span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">0</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        <span class="keyword">if</span> n==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> arr[<span class="number">0</span>]</span><br><span class="line">        dp = [val <span class="keyword">for</span> val <span class="keyword">in</span> arr]</span><br><span class="line">        <span class="keyword">if</span> dp[<span class="number">0</span>] &gt; dp[<span class="number">1</span>]:</span><br><span class="line">            dp[<span class="number">1</span>] = dp[<span class="number">0</span>]</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,n):</span><br><span class="line">            dp[i] = max(dp[i<span class="number">-2</span>]+arr[i],dp[i],dp[i<span class="number">-1</span>])</span><br><span class="line">        <span class="keyword">return</span> dp[<span class="number">-1</span>]</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(self,nums)</span>:</span></span><br><span class="line">      n = len(nums)</span><br><span class="line">      <span class="keyword">if</span> n == <span class="number">1</span> :</span><br><span class="line">          <span class="keyword">return</span> nums[<span class="number">0</span>]</span><br><span class="line">      <span class="keyword">if</span> n == <span class="number">0</span> :</span><br><span class="line">          <span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">      res1 = self.rob_range(nums,<span class="number">1</span>,n<span class="number">-1</span>) <span class="comment"># 第一家和最后一家都不偷</span></span><br><span class="line">      res2=  self.rob_range(nums,<span class="number">1</span>,n) <span class="comment">#第一家不偷</span></span><br><span class="line">      res3 = self.rob_range(nums,<span class="number">0</span>,n<span class="number">-1</span>) <span class="comment">#最后一家不偷</span></span><br><span class="line">      <span class="keyword">return</span> max([res1,res2,res3])</span><br></pre></td></tr></table></figure>
 
 <h2 id="打家劫舍-3-（二叉树）"><a href="#打家劫舍-3-（二叉树）" class="headerlink" title="打家劫舍 3 （二叉树）"></a>打家劫舍 3 （二叉树）</h2><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>在上次打劫完一条街道之后和一圈房屋后，小偷又发现了一个新的可行窃的地区。这个地区只有一个入口，我们称之为“根”。 除了“根”之外，每栋房子有且只有一个“父“房子与之相连。一番侦察之后，聪明的小偷意识到“这个地方的所有房屋的排列类似于一棵二叉树”。 如果两个直接相连的房子在同一天晚上被打劫，房屋将自动报警。</p>
@@ -349,6 +349,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/03/30/leetcode_29_两数相除/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          29.两数相除
+        
+      </div>
+    </a>
   
   
     <a href="/2020/02/28/最大连续子序列/" id="article-nav-older" class="article-nav-link-wrap">
@@ -584,10 +593,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
               </li>
              
@@ -604,6 +609,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
@@ -616,19 +637,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
               </li>
              
               <li class="article-tag-list-item">

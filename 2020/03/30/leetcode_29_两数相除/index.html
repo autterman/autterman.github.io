@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>leet_650_只有两个键的键盘 | Autter</title>
+  <title>29.两数相除 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
-<meta name="keywords" content="简单">
+  <meta name="description" content="leetcode_29.两数相除题目描述给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。 返回被除数 dividend 除以除数 divisor 得到的商。 整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2">
+<meta name="keywords" content="二分法,矩阵">
 <meta property="og:type" content="article">
-<meta property="og:title" content="leet_650_只有两个键的键盘">
-<meta property="og:url" content="http://www.autterman.cn/2019/02/01/测试博客/index.html">
+<meta property="og:title" content="29.两数相除">
+<meta property="og:url" content="http://www.autterman.cn/2020/03/30/leetcode_29_两数相除/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
+<meta property="og:description" content="leetcode_29.两数相除题目描述给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。 返回被除数 dividend 除以除数 divisor 得到的商。 整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-21T06:16:03.456Z">
+<meta property="og:updated_time" content="2020-03-31T07:31:54.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leet_650_只有两个键的键盘">
-<meta name="twitter:description" content="leet_650_只有两个键的键盘  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作： Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。 Paste (粘贴) : 你可以粘贴你上一次复制的字符。 给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &amp;apos;A&amp;apos;。输出能够打印出 n 个 &amp;">
+<meta name="twitter:title" content="29.两数相除">
+<meta name="twitter:description" content="leetcode_29.两数相除题目描述给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。 返回被除数 dividend 除以除数 divisor 得到的商。 整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -163,7 +163,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-测试博客" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetcode_29_两数相除" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -171,11 +171,11 @@
       <header class="article-header">
         
         
-        <a href="/2019/02/01/测试博客/" class="archive-article-date >
+        <a href="/2020/03/30/leetcode_29_两数相除/" class="archive-article-date >
 
 
 
-  	<time datetime="2019-02-01T09:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-02-01</time>
+  	<time datetime="2020-03-30T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-30</time>
 </a>
         <!--显示阅读次数-->
         
@@ -215,18 +215,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="leet-650-只有两个键的键盘"><a href="#leet-650-只有两个键的键盘" class="headerlink" title="leet_650_只有两个键的键盘"></a>leet_650_只有两个键的键盘</h1><p>  最初在一个记事本上只有一个字符 ‘A’。你每次可以对这个记事本进行两种操作：</p>
-<pre><code>Copy All (复制全部) : 你可以复制这个记事本中的所有字符(部分的复制是不允许的)。
-Paste (粘贴) : 你可以粘贴你上一次复制的字符。
-给定一个数字 n 。你需要使用最少的操作次数，在记事本中打印出恰好 n 个 &apos;A&apos;。输出能够打印出 n 个 &apos;A&apos; 的最少操作次数。</code></pre><p>示例 1:</p>
-<p>输入: 3<br>输出: 3<br>解释:<br>        最初, 我们只有一个字符 ‘A’。<br>        第 1 步, 我们使用 Copy All 操作。<br>        第 2 步, 我们使用 Paste 操作来获得 ‘AA’。<br>        第 3 步, 我们使用 Paste 操作来获得 ‘AAA’。</p>
-<p>注意：    n 的取值范围是 [1, 1000] 。</p>
-<a id="more"></a>  
-<p>方法一：如果 n 为素数，那么 op = n,<br>              否则，求 乘积为 n 的所有素数 ，如 n = 15 , 3*5 =15, op = 3 + 5 ,问题转化为求素数。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSteps</span><span class="params">(self, n)</span>:</span> </span><br><span class="line">        <span class="keyword">if</span> n ==<span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> self.get_all_divprimers(n)</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_all_divprimers</span><span class="params">(self, n)</span>:</span></span><br><span class="line">        res, i = [],<span class="number">2</span></span><br><span class="line">        <span class="keyword">while</span> i &lt;= int(pow(n,<span class="number">0.5</span>)):</span><br><span class="line">            <span class="keyword">if</span> n % i == <span class="number">0</span>:</span><br><span class="line">                res.append(i)</span><br><span class="line">                n , i = n/i, <span class="number">2</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                i+=<span class="number">1</span></span><br><span class="line">        res.append(n)</span><br><span class="line">        print(sum(res))</span><br><span class="line">        <span class="keyword">return</span> sum(res)</span><br></pre></td></tr></table></figure>
+        <h2 id="leetcode-29-两数相除"><a href="#leetcode-29-两数相除" class="headerlink" title="leetcode_29.两数相除"></a>leetcode_29.两数相除</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定两个整数，被除数 dividend 和除数 divisor。将两数相除，要求不使用乘法、除法和 mod 运算符。</p>
+<p>返回被除数 dividend 除以除数 divisor 得到的商。</p>
+<p>整数除法的结果应当截去（truncate）其小数部分，例如：truncate(8.345) = 8 以及 truncate(-2.7335) = -2</p>
+<a id="more"></a> 
+<p>示例 1:</p>
+<p>输入: dividend = 10, divisor = 3<br>输出: 3<br>解释: 10/3 = truncate(3.33333..) = truncate(3) = 3</p>
+<p><strong>分析：</strong>很熟悉的一道题，笔试中遇到的一道题，看了别人的解法才有了思路，其实这道题就是：除数能减去多少个被除数。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">divide</span><span class="params">(self, divd: int, dior: int)</span> -&gt; int:</span></span><br><span class="line">        res = <span class="number">0</span></span><br><span class="line">        sign =  <span class="number">1</span> <span class="keyword">if</span> divd ^ dior &gt;= <span class="number">0</span> <span class="keyword">else</span> <span class="number">-1</span></span><br><span class="line">        divd = abs(divd)</span><br><span class="line">        dior = abs(dior)</span><br><span class="line">        <span class="keyword">while</span> divd &gt;= dior:</span><br><span class="line">            res += <span class="number">1</span></span><br><span class="line">            divd -= dior</span><br><span class="line">        res = res*sign </span><br><span class="line">        <span class="keyword">return</span> min(max(<span class="number">-2</span>**<span class="number">31</span>, res), <span class="number">2</span>**<span class="number">31</span><span class="number">-1</span>)</span><br></pre></td></tr></table></figure>
 
-<p>**分析:想要减少操作数，我们就尽可能的一次复制较大长度的，但是注意，复制的这个长度值一旦增加，就无法变小，注意最后复制粘贴的构成的总长度恰好是n。所以，我们首先判断n 是不是质数，如果是，只能一个一个字符粘贴了，op 数 就是 n 。 如果不是，说明可以通过一个相对大的长度复制粘贴。<br>    如 n = 9, 那么，9 可由 3粘贴三次得到。     </p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">bigchu</span><span class="params">(self,s)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">2</span>,int(s/<span class="number">2</span>)):</span><br><span class="line">            </span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> s%i:</span><br><span class="line">                <span class="keyword">return</span> i</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">minSteps</span><span class="params">(self,n)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> n == <span class="number">1</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">        sum = <span class="number">0</span></span><br><span class="line">        chu = self.bigchu(n)</span><br><span class="line">        <span class="keyword">while</span> n&gt;<span class="number">4</span> <span class="keyword">and</span> chu :</span><br><span class="line">            sum+=chu</span><br><span class="line">            n /=chu</span><br><span class="line">            chu = self.bigchu(n)</span><br><span class="line">        <span class="keyword">return</span> sum+n</span><br></pre></td></tr></table></figure>
+<p>但是，leetcode 提交时超时！<br><strong>pro:</strong> 让被除数不断减去除数，直到不够减，每次减完后除数翻倍，具体步骤看代码。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">divide1</span><span class="params">(<span class="keyword">int</span> dividend, <span class="keyword">int</span> divisor)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> negtive=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> flag=<span class="number">0</span>;<span class="comment">//是否是-2147483648</span></span><br><span class="line">        <span class="keyword">if</span>((dividend^divisor) &lt;<span class="number">0</span>) negtive=-<span class="number">1</span>;<span class="comment">//最高位有一个负数，表明结果应该是负数，异或能判断出来</span></span><br><span class="line">        <span class="comment">//溢出情况：-2147483648/-1,除数是0,负数转为正数：-2147483648会溢出，考虑将其+1，最后再加回来</span></span><br><span class="line">        <span class="comment">//几种特殊情况可以并在后面，也可以直接写在这里，遇到这几种直接返回结果就行</span></span><br><span class="line">        <span class="keyword">if</span>(dividend==-<span class="number">2147483648</span> &amp;&amp; divisor==<span class="number">1</span>)<span class="keyword">return</span> -<span class="number">2147483648</span>;</span><br><span class="line">        <span class="keyword">if</span>(dividend==-<span class="number">2147483648</span> &amp;&amp; divisor==-<span class="number">1</span>) <span class="keyword">return</span> <span class="number">2147483647</span>;</span><br><span class="line">        <span class="keyword">if</span>(dividend==-<span class="number">2147483648</span>)&#123;</span><br><span class="line">            dividend=<span class="number">2147483647</span>;</span><br><span class="line">            flag=<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(dividend&lt;<span class="number">0</span>)dividend=-dividend;</span><br><span class="line">        <span class="keyword">if</span>(divisor&lt;<span class="number">0</span>)divisor=-divisor;<span class="comment">//将除数被除数都化为正数</span></span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(dividend &gt;= divisor)&#123;</span><br><span class="line">            <span class="keyword">int</span> tmp = divisor;</span><br><span class="line">            <span class="keyword">int</span> i = <span class="number">1</span>;</span><br><span class="line">            <span class="keyword">while</span>(dividend &gt;= tmp)&#123;</span><br><span class="line">                dividend -= tmp;</span><br><span class="line">                res += i;</span><br><span class="line">                i&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">                tmp&lt;&lt;=<span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res * negtive;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -262,7 +261,11 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">简单</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">矩阵</a>
         		</li>
       		
 		</ul>
@@ -318,7 +321,7 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2019/02/01/测试博客/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/03/30/leetcode_29_两数相除/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,15 +335,11 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
   
 <nav id="article-nav">
   
-    <a href="/2019/10/10/leetcode227-基本计算器ii/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          leetcode227.基本计算器ii
-        
-      </div>
-    </a>
   
+    <a href="/2020/03/24/leetcode_打家劫舍问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">leetcode_打家劫舍问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -365,7 +364,7 @@ Paste (粘贴) : 你可以粘贴你上一次复制的字符。
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#leet-650-只有两个键的键盘"><span class="toc-number">1.</span> <span class="toc-text">leet_650_只有两个键的键盘</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-29-两数相除"><span class="toc-number">1.</span> <span class="toc-text">leetcode_29.两数相除</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
