@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>436.寻找右区间 | Autter</title>
+  <title>289.生命游戏 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
-<meta name="keywords" content="中等,hash">
+  <meta name="description" content="leetcode_289.生命游戏题目描述生命游戏，简称为生命，是英国数学家约翰·何顿·康威在 1970 年发明的细胞自动机。给定一个包含 m × n 个格子的面板，每一个格子都可以看成是一个细胞。每个细胞都具有一个初始状态：1 即为活细胞（live），或 0 即为死细胞（dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：如果活细胞周围八个位置的活细胞数少于两">
+<meta name="keywords" content="矩阵上的格子问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="436.寻找右区间">
-<meta property="og:url" content="http://www.autterman.cn/2019/10/28/leetcode_436-寻找右区间/index.html">
+<meta property="og:title" content="289.生命游戏">
+<meta property="og:url" content="http://www.autterman.cn/2020/04/02/leetcode_289_生命游戏/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
+<meta property="og:description" content="leetcode_289.生命游戏题目描述生命游戏，简称为生命，是英国数学家约翰·何顿·康威在 1970 年发明的细胞自动机。给定一个包含 m × n 个格子的面板，每一个格子都可以看成是一个细胞。每个细胞都具有一个初始状态：1 即为活细胞（live），或 0 即为死细胞（dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：如果活细胞周围八个位置的活细胞数少于两">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T11:36:45.147Z">
+<meta property="og:updated_time" content="2020-04-02T07:01:14.638Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="436.寻找右区间">
-<meta name="twitter:description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
+<meta name="twitter:title" content="289.生命游戏">
+<meta name="twitter:description" content="leetcode_289.生命游戏题目描述生命游戏，简称为生命，是英国数学家约翰·何顿·康威在 1970 年发明的细胞自动机。给定一个包含 m × n 个格子的面板，每一个格子都可以看成是一个细胞。每个细胞都具有一个初始状态：1 即为活细胞（live），或 0 即为死细胞（dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：如果活细胞周围八个位置的活细胞数少于两">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-leetcode_436-寻找右区间" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetcode_289_生命游戏" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -177,11 +177,11 @@
       <header class="article-header">
         
         
-        <a href="/2019/10/28/leetcode_436-寻找右区间/" class="archive-article-date >
+        <a href="/2020/04/02/leetcode_289_生命游戏/" class="archive-article-date >
 
 
 
-  	<time datetime="2019-10-28T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+  	<time datetime="2020-04-02T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
 </a>
         <!--显示阅读次数-->
         
@@ -221,18 +221,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="leet-code-436-寻找右区间"><a href="#leet-code-436-寻找右区间" class="headerlink" title="leet_code_ 436_寻找右区间"></a>leet_code_ 436_寻找右区间</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。</p>
-<p>对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。</p>
+        <h2 id="leetcode-289-生命游戏"><a href="#leetcode-289-生命游戏" class="headerlink" title="leetcode_289.生命游戏"></a>leetcode_289.生命游戏</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>生命游戏，简称为生命，是英国数学家约翰·何顿·康威在 1970 年发明的细胞自动机。<br>给定一个包含 m × n 个格子的面板，每一个格子都可以看成是一个细胞。<br>每个细胞都具有一个初始状态：1 即为活细胞（live），或 0 即为死细胞（dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：<br>如果活细胞周围八个位置的活细胞数少于两个，则该位置活细胞死亡；<br>如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；<br>如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；<br>如果死细胞周围正好有三个活细胞，则该位置死细胞复活；</p>
 <a id="more"></a> 
-<p>注意:</p>
-<p>你可以假设区间的终点总是大于它的起始点。<br>你可以假定这些区间都不具有相同的起始点。</p>
-<p>示例1：<br>输入: [ [1,2] ]<br>输出: [-1]</p>
-<p>解释:集合中只有一个区间，所以输出-1。<br>示例 2:<br>输入: [ [3,4], [2,3], [1,2] ]<br>输出: [-1, 0, 1]</p>
-<p>解释:对于[3,4]，没有满足条件的“右侧”区间。<br>对于[2,3]，区间[3,4]具有最小的“右”起点;<br>对于[1,2]，区间[2,3]具有最小的“右”起点。</p>
-<p>题目分析：<br>1.直接方法：暴力法<br>依次遍历每一个数组，从剩余数组中符合条件的最接近的右区间，复杂度为O（n*n）<br>2.借用hash 记录下数组第一个元素与第二个元素的位置并进行排序。我们取出排序后数组的每个区间，并从剩下的区间中找到起点刚好大于选中区间起点的那个。怎么操作呢？例如说，我们选取了第 ii 个区间。为了找到满足要求的，我们不需要查找后面的那些区间。这是因为 intervalsintervals 已经按照起点顺序排序，而区间的终点总大于起点。因此，我们只在满足 i+1&lt; j &lt; ni+1&lt;j&lt;n 的 区间 jj 中进行查找。按照升序顺序找到的第一个区间即为所求区间，因为后面的区间起点一定会更大。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findRightInterval</span><span class="params">( intervals)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type intervals: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">		</span><br><span class="line">        length = len(intervals)</span><br><span class="line">        ans = [<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(length)]</span><br><span class="line">        <span class="keyword">if</span> length &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        key = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(length)]</span><br><span class="line">        array1 = []</span><br><span class="line">        array2 = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            array1.append(intervals[i][<span class="number">0</span>])</span><br><span class="line">            array2.append(intervals[i][<span class="number">1</span>])</span><br><span class="line">        dic_low = dict(zip(key, array1))</span><br><span class="line">        dic_low = sorted(dic_low.items(), key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="literal">False</span>)</span><br><span class="line">        print(<span class="string">"dic_low:"</span>,dic_low)</span><br><span class="line">        dic_high = dict(zip(key, array2))</span><br><span class="line">        dic_high = sorted(dic_high.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="literal">False</span>)</span><br><span class="line">        print(<span class="string">"dic_high:"</span>,dic_high)</span><br><span class="line">        turn1, turn2 = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> turn2 &lt; length:</span><br><span class="line">            <span class="keyword">if</span>  dic_low[turn2][<span class="number">1</span>] &lt; dic_high[turn1][<span class="number">1</span>]:</span><br><span class="line">                turn2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans[dic_high[turn1][<span class="number">0</span>]] = dic_low[turn2][<span class="number">0</span>]</span><br><span class="line">                turn1 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p>根据当前状态，写一个函数来计算面板上所有细胞的下一个（一次更新后的）状态。下一个状态是通过将上述规则同时应用于当前状态下的每个细胞所形成的，其中细胞的出生和死亡是同时发生的。</p>
+<p>注意：你可以使用原地算法解决本题吗？请注意，面板上所有格子需要同时被更新：你不能先更新某些格子，然后使用它们的更新后的值再更新其他格子。</p>
+<p><strong>分析</strong>：题目说所有格子需要同时更新，可以另外开辟一个二维数组存放，但题目说使用原地算法，所以就原本的二维数组上操作。<br>定义一个状态发生改变的数组，存放的是修改过的状态的下标。<br>flag_1_0:表示1-&gt;0<br>flag_0_1:表示0-&gt;1<br><strong>解法一</strong>：暴力直观法</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gameOfLife</span><span class="params">( board)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type board: List[List[int]]</span></span><br><span class="line"><span class="string">    :rtype: None Do not return anything, modify board in-place instead.</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    row =len(board)</span><br><span class="line">    col = len(board[<span class="number">0</span>])</span><br><span class="line">    <span class="keyword">if</span> row == <span class="number">0</span>  <span class="keyword">or</span>  col == <span class="number">0</span> :</span><br><span class="line">    	<span class="keyword">return</span> board</span><br><span class="line">    <span class="comment">#一个格子附近的八个方向</span></span><br><span class="line">    dire_x = [<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">1</span>]</span><br><span class="line">    dire_y = [<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">1</span>,<span class="number">-1</span>,<span class="number">1</span>]</span><br><span class="line">    flag_1_0= []</span><br><span class="line">    flag_0_1= []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(row):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(col):</span><br><span class="line">            count = <span class="number">0</span> </span><br><span class="line">            <span class="keyword">for</span> t <span class="keyword">in</span> range(<span class="number">8</span>):</span><br><span class="line">                    x = dire_x[t] +i</span><br><span class="line">                    y = dire_y[t] + j</span><br><span class="line">                   <span class="comment">#判断边界</span></span><br><span class="line">                    <span class="keyword">if</span> x &lt;<span class="number">0</span> <span class="keyword">or</span> x &gt;= row <span class="keyword">or</span> y &lt; <span class="number">0</span> <span class="keyword">or</span> y &gt;= col:</span><br><span class="line">                        <span class="keyword">continue</span></span><br><span class="line">                    <span class="keyword">if</span> board[i][j] == <span class="number">1</span>:</span><br><span class="line">                    	<span class="comment">#如果为活细胞，就统计周围死细胞的个数</span></span><br><span class="line">                        <span class="keyword">if</span> board[x][y] == <span class="number">1</span> :</span><br><span class="line">                            <span class="keyword">if</span> ([x,y] <span class="keyword">not</span> <span class="keyword">in</span> flag_0_1) :</span><br><span class="line">                                count += <span class="number">1</span></span><br><span class="line">                        <span class="keyword">if</span> board[x][y] == <span class="number">0</span> <span class="keyword">and</span>  [x,y] <span class="keyword">in</span> flag_1_0:</span><br><span class="line">                            count+= <span class="number">1</span> </span><br><span class="line">                    <span class="comment">#如果为死细胞</span></span><br><span class="line">                    <span class="keyword">if</span> board[i][j] == <span class="number">0</span>:</span><br><span class="line">                            <span class="keyword">if</span> board[x][y] == <span class="number">1</span>:</span><br><span class="line">                                <span class="keyword">if</span> [x,y] <span class="keyword">not</span> <span class="keyword">in</span> flag_0_1:</span><br><span class="line">                                    count +=<span class="number">1</span> </span><br><span class="line">                            <span class="keyword">if</span> board[x][y] == <span class="number">0</span>:</span><br><span class="line"></span><br><span class="line">                                <span class="keyword">if</span> [x,y] <span class="keyword">in</span> flag_1_0:</span><br><span class="line">                                    count += <span class="number">1</span> </span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">3</span>  <span class="keyword">and</span> board[i][j]== <span class="number">0</span>:</span><br><span class="line">                flag_0_1.append([i,j])</span><br><span class="line">                board[i][j] = <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> (count &lt; <span class="number">2</span> <span class="keyword">or</span> count &gt;<span class="number">3</span> ) <span class="keyword">and</span> board[i][j] == <span class="number">1</span> :</span><br><span class="line">                flag_1_0.append([i,j])</span><br><span class="line">                board[i][j]  = <span class="number">0</span> </span><br><span class="line">    <span class="keyword">return</span> board</span><br></pre></td></tr></table></figure>
 
-<pre><code>也可以用二分法来做，后面续上。</code></pre><p>Coder driving!!! </p>
+<p><strong>解法二</strong>：逆向思维<br>分析：被影响到的格子加10，只有为1 的格子的才能影响周围的8个格子。<br>规则：<br>          如果活细胞周围八个位置的活细胞数少于两个，则该位置活细胞死亡；<br>        如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；<br>        如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；<br>        如果死细胞周围正好有三个活细胞，则该位置死细胞复活；</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gameOfLife</span><span class="params">(board)</span>:</span></span><br><span class="line">    m,n = len(board),len(board[<span class="number">0</span>])</span><br><span class="line">    </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">effect</span><span class="params">(x,y)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> [x<span class="number">-1</span>,x,x+<span class="number">1</span>]:</span><br><span class="line">            <span class="keyword">for</span> j <span class="keyword">in</span> [y<span class="number">-1</span>,y,y+<span class="number">1</span>]:</span><br><span class="line">                <span class="keyword">if</span> (i ==x <span class="keyword">and</span> j ==y) <span class="keyword">or</span> (i &lt; <span class="number">0</span> <span class="keyword">or</span> i &gt;=m <span class="keyword">or</span> j &lt; <span class="number">0</span> <span class="keyword">or</span> j &gt;= n):</span><br><span class="line">                    <span class="keyword">continue</span></span><br><span class="line">                board[i][j] += <span class="number">10</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">change</span><span class="params">(i,j)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> board[i][j] // <span class="number">10</span> == <span class="number">3</span>:</span><br><span class="line">            board[i][j] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">elif</span> board[i][j] % <span class="number">10</span> == <span class="number">1</span> <span class="keyword">and</span> board[i][j] //<span class="number">10</span> ==<span class="number">2</span> :</span><br><span class="line">            board[i][j] = <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            board[i][j] = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            <span class="keyword">if</span> board[i][j] %<span class="number">10</span>== <span class="number">1</span>:</span><br><span class="line">                effect(i,j)</span><br><span class="line"></span><br><span class="line">    <span class="comment">#分析影响状况</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(m):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(n):</span><br><span class="line">            change(i,j)</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -267,11 +265,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">矩阵上的格子问题</a>
         		</li>
       		
 		</ul>
@@ -327,7 +321,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2019/10/28/leetcode_436-寻找右区间/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/02/leetcode_289_生命游戏/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +335,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/28/436-寻找右区间/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/05/leetcode_石头游戏合集/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          436.寻找右区间
+          石子游戏系列（博弈问题）
         
       </div>
     </a>
   
   
-    <a href="/2019/10/24/leet-code-658-找到K个最接近的元素/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">leet_code_658.找到K个最接近的元素</div>
+    <a href="/2020/03/30/leetcode_29_两数相除/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">29.两数相除</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +373,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leet-code-436-寻找右区间"><span class="toc-number">1.</span> <span class="toc-text">leet_code_ 436_寻找右区间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-289-生命游戏"><span class="toc-number">1.</span> <span class="toc-text">leetcode_289.生命游戏</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>

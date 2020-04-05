@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>436.寻找右区间 | Autter</title>
+  <title>石子游戏系列（博弈问题） | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
-<meta name="keywords" content="中等,hash">
+  <meta name="description" content="leetcode_石子游戏系列题目描述石头游戏1：亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。假设亚历克斯和李都发挥出最佳水平，当">
+<meta name="keywords" content="DP,博弈论">
 <meta property="og:type" content="article">
-<meta property="og:title" content="436.寻找右区间">
-<meta property="og:url" content="http://www.autterman.cn/2019/10/28/leetcode_436-寻找右区间/index.html">
+<meta property="og:title" content="石子游戏系列（博弈问题）">
+<meta property="og:url" content="http://www.autterman.cn/2020/04/05/leetcode_石头游戏合集/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
+<meta property="og:description" content="leetcode_石子游戏系列题目描述石头游戏1：亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。假设亚历克斯和李都发挥出最佳水平，当">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-10-28T11:36:45.147Z">
+<meta property="og:updated_time" content="2020-04-05T08:49:56.967Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="436.寻找右区间">
-<meta name="twitter:description" content="leet_code_ 436_寻找右区间题目描述给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。 对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。">
+<meta name="twitter:title" content="石子游戏系列（博弈问题）">
+<meta name="twitter:description" content="leetcode_石子游戏系列题目描述石头游戏1：亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。假设亚历克斯和李都发挥出最佳水平，当">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -169,7 +169,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-leetcode_436-寻找右区间" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-leetcode_石头游戏合集" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -177,11 +177,11 @@
       <header class="article-header">
         
         
-        <a href="/2019/10/28/leetcode_436-寻找右区间/" class="archive-article-date >
+        <a href="/2020/04/05/leetcode_石头游戏合集/" class="archive-article-date >
 
 
 
-  	<time datetime="2019-10-28T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+  	<time datetime="2020-04-05T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
 </a>
         <!--显示阅读次数-->
         
@@ -221,18 +221,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="leet-code-436-寻找右区间"><a href="#leet-code-436-寻找右区间" class="headerlink" title="leet_code_ 436_寻找右区间"></a>leet_code_ 436_寻找右区间</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一组区间，对于每一个区间 i，检查是否存在一个区间 j，它的起始点大于或等于区间 i 的终点，这可以称为 j 在 i 的“右侧”。</p>
-<p>对于任何区间，你需要存储的满足条件的区间 j 的最小索引，这意味着区间 j 有最小的起始点可以使其成为“右侧”区间。如果区间 j 不存在，则将区间 i 存储为 -1。最后，你需要输出一个值为存储的区间值的数组。</p>
+        <h2 id="leetcode-石子游戏系列"><a href="#leetcode-石子游戏系列" class="headerlink" title="leetcode_石子游戏系列"></a>leetcode_石子游戏系列</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><strong>石头游戏1</strong>：亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。<br>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。<br>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。<br>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
 <a id="more"></a> 
-<p>注意:</p>
-<p>你可以假设区间的终点总是大于它的起始点。<br>你可以假定这些区间都不具有相同的起始点。</p>
-<p>示例1：<br>输入: [ [1,2] ]<br>输出: [-1]</p>
-<p>解释:集合中只有一个区间，所以输出-1。<br>示例 2:<br>输入: [ [3,4], [2,3], [1,2] ]<br>输出: [-1, 0, 1]</p>
-<p>解释:对于[3,4]，没有满足条件的“右侧”区间。<br>对于[2,3]，区间[3,4]具有最小的“右”起点;<br>对于[1,2]，区间[2,3]具有最小的“右”起点。</p>
-<p>题目分析：<br>1.直接方法：暴力法<br>依次遍历每一个数组，从剩余数组中符合条件的最接近的右区间，复杂度为O（n*n）<br>2.借用hash 记录下数组第一个元素与第二个元素的位置并进行排序。我们取出排序后数组的每个区间，并从剩下的区间中找到起点刚好大于选中区间起点的那个。怎么操作呢？例如说，我们选取了第 ii 个区间。为了找到满足要求的，我们不需要查找后面的那些区间。这是因为 intervalsintervals 已经按照起点顺序排序，而区间的终点总大于起点。因此，我们只在满足 i+1&lt; j &lt; ni+1&lt;j&lt;n 的 区间 jj 中进行查找。按照升序顺序找到的第一个区间即为所求区间，因为后面的区间起点一定会更大。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">findRightInterval</span><span class="params">( intervals)</span>:</span></span><br><span class="line">        <span class="string">"""</span></span><br><span class="line"><span class="string">        :type intervals: List[List[int]]</span></span><br><span class="line"><span class="string">        :rtype: List[int]</span></span><br><span class="line"><span class="string">        """</span></span><br><span class="line">		</span><br><span class="line">        length = len(intervals)</span><br><span class="line">        ans = [<span class="number">-1</span> <span class="keyword">for</span> i <span class="keyword">in</span> range(length)]</span><br><span class="line">        <span class="keyword">if</span> length &lt; <span class="number">2</span>:</span><br><span class="line">            <span class="keyword">return</span> ans</span><br><span class="line">        key = [i <span class="keyword">for</span> i <span class="keyword">in</span> range(length)]</span><br><span class="line">        array1 = []</span><br><span class="line">        array2 = []</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            array1.append(intervals[i][<span class="number">0</span>])</span><br><span class="line">            array2.append(intervals[i][<span class="number">1</span>])</span><br><span class="line">        dic_low = dict(zip(key, array1))</span><br><span class="line">        dic_low = sorted(dic_low.items(), key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="literal">False</span>)</span><br><span class="line">        print(<span class="string">"dic_low:"</span>,dic_low)</span><br><span class="line">        dic_high = dict(zip(key, array2))</span><br><span class="line">        dic_high = sorted(dic_high.items(),key=<span class="keyword">lambda</span> x:x[<span class="number">1</span>], reverse=<span class="literal">False</span>)</span><br><span class="line">        print(<span class="string">"dic_high:"</span>,dic_high)</span><br><span class="line">        turn1, turn2 = <span class="number">0</span>,<span class="number">0</span></span><br><span class="line">        <span class="keyword">while</span> turn2 &lt; length:</span><br><span class="line">            <span class="keyword">if</span>  dic_low[turn2][<span class="number">1</span>] &lt; dic_high[turn1][<span class="number">1</span>]:</span><br><span class="line">                turn2 += <span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ans[dic_high[turn1][<span class="number">0</span>]] = dic_low[turn2][<span class="number">0</span>]</span><br><span class="line">                turn1 += <span class="number">1</span></span><br><span class="line">        <span class="keyword">return</span> ans</span><br></pre></td></tr></table></figure>
+<p><strong>分析</strong>：此类问题属于博弈问题，一般可用动态规划解决，难得是构造出好用的 dp Table 。<br>用一个数组 pilespiles 表示，piles[i] 表示第 i 堆石子有多少个。你们轮流拿石头，一次拿一堆，但是只能拿走最左边或者最右边的石头堆。所有石头被拿完后，谁拥有的石头多，谁获胜。<br>如果为堆数为偶数，那么谁先手谁会胜利。把问题一般化，石头的堆数可以是任意正整数，石头的总数也可以是任意正整数，这样就能打破先手必胜的局面了。<br>比如有三堆石头 piles = [1, 100, 3]，先手不管拿 11 还是 33，能够决定胜负的 100100 都会被后手拿走，后手会获胜。<br><strong>最终要求出先手和后手的最终分数差，谁得分多谁赢！</strong><br>先看定义的dp 数组：<br>dp[i][j].fir:在留有 i,i+1,i+2,，，，，j 堆时，先手最多得的分,三维数组表示就是dp[i][j][0]；<br>dp[i][j].sec:在留有 i,i+1,i+2,，，，，j 堆时，后手最多得的分，三维数组表示就是dp[i][j][1]；<br>dp[i][j][0] = max(piles[i] + dp[i+1][j][1],piles[j] + dp[i][j-1][1]) #先手左边或右边的两种情况，取较大的结果；<br>if 先手拿左边的：<br>    dp[i][j][1] = dp[i+1][j][0]<br>if 先手拿右边的：<br>    dp[i][j][1] = dp[i][j-1][0]<br>base case :当 i = j 时，dp[i][j][0] = piles[i],dp[i][j][1] = 0 </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stoneGame</span><span class="params">(piles)</span>:</span></span><br><span class="line">    n = len(piles)</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> :</span><br><span class="line">        <span class="keyword">return</span> piles[<span class="number">0</span>] &gt; <span class="number">0</span></span><br><span class="line">    dp = [[[<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">2</span>)] <span class="keyword">for</span> _ <span class="keyword">in</span> range(n) ]<span class="keyword">for</span> i <span class="keyword">in</span> range(n)]</span><br><span class="line">    <span class="comment">#base case </span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">        dp[i][i][<span class="number">0</span>] = piles[i]</span><br><span class="line">        dp[i][i][<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">    <span class="comment">#顺序：从下到上，从左到右</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(i+<span class="number">1</span> ,n):</span><br><span class="line">            <span class="comment">#如果先手选择左边</span></span><br><span class="line">            left = piles[i] + dp[i+<span class="number">1</span>][j][<span class="number">1</span>]</span><br><span class="line">            right = piles[j] + dp[i][j<span class="number">-1</span>][<span class="number">1</span>]</span><br><span class="line">            <span class="keyword">if</span> left &lt; right:</span><br><span class="line">                dp[i][j][<span class="number">0</span>] = right </span><br><span class="line">                dp[i][j][<span class="number">1</span>] = dp[i][j<span class="number">-1</span>][<span class="number">0</span>]</span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                dp[i][j][<span class="number">0</span>] = left</span><br><span class="line">                dp[i][j][<span class="number">1</span>] = dp[i+<span class="number">1</span>][j][<span class="number">0</span>]</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>][n<span class="number">-1</span>][<span class="number">0</span>] - dp[<span class="number">0</span>][n<span class="number">-1</span>][<span class="number">1</span>] &gt; <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
-<pre><code>也可以用二分法来做，后面续上。</code></pre><p>Coder driving!!! </p>
+<p><strong>石头游戏3</strong>：Alice 和 Bob 用几堆石子在做游戏。几堆石子排成一行，每堆石子都对应一个得分，由数组 stoneValue 给出。</p>
+<p>Alice 和 Bob 轮流取石子，Alice 总是先开始。在每个玩家的回合中，该玩家可以拿走剩下石子中的的前 1、2 或 3 堆石子 。比赛一直持续到所有石头都被拿走。<br>每个玩家的最终得分为他所拿到的每堆石子的对应得分之和。每个玩家的初始分数都是 0 。比赛的目标是决出最高分，得分最高的选手将会赢得比赛，比赛也可能会出现平局。<br>假设 Alice 和 Bob 都采取 最优策略 。如果 Alice 赢了就返回 “Alice” ，Bob 赢了就返回 “Bob”，平局（分数相同）返回 “Tie” 。</p>
+<p><strong>分析</strong>：每次能去一到三堆，谁取得多，谁赢！<br>dp[i]:只剩第i堆到最后一堆时，当前选手能拿到的最大分数，最后结果就是：dp[0] 与 总分数 - dp[0] 谁大谁赢！<br>base case : 只剩最后一堆时，dp[n-1] = piles[n-1]<br>为了让自己拿到较多的分，就得让对手少拿分，所以对手拿  min(dp[i+1],dp[i+2],dp[i+3])，<br>自己得到：dp[i] = 剩下所有分数 - min(dp[i+1],dp[i+2],dp[i+3])<br>状态方程转移顺序：从后往前</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">stoneGame3</span><span class="params">(piles)</span>:</span></span><br><span class="line">    n = len(piles)</span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">1</span> :</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Alice"</span></span><br><span class="line">    dp = [<span class="number">0</span> <span class="keyword">for</span> _ <span class="keyword">in</span> range(n+<span class="number">3</span>)]</span><br><span class="line">    dp[n<span class="number">-1</span>] = piles[n<span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(n<span class="number">-1</span>,<span class="number">-1</span>,<span class="number">-1</span>):</span><br><span class="line">        score = sum(piles[i:n])</span><br><span class="line">        sec = min(dp[i+<span class="number">1</span>],dp[i+<span class="number">2</span>],dp[i+<span class="number">3</span>])</span><br><span class="line">        dp[i] = score - sec </span><br><span class="line">    all_score = sum(piles)</span><br><span class="line">    <span class="keyword">if</span> dp[<span class="number">0</span>] &lt; all_score - dp[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Bob"</span></span><br><span class="line">    <span class="keyword">elif</span> dp[<span class="number">0</span>] &gt; all_score - dp[<span class="number">0</span>]:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Alice"</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"Tie"</span></span><br></pre></td></tr></table></figure>
+
+<p>石头游戏2，先留着，不能直接说看了没看懂，看别人写的也没看懂，先留着它！涉及到博弈论的这些问题，多是用动态规划解决，难在 DP Table的定义，捷径不多，多做多练多想。<br>看到其他大佬的推荐博弈论的两篇文章，还没来得及看，先插眼！</p>
+<p>博弈类入门：<a href="https://blog.csdn.net/acm_cxlove/article/details/7854530" target="_blank" rel="noopener">https://blog.csdn.net/acm_cxlove/article/details/7854530</a><br>博弈类进阶：<a href="https://blog.csdn.net/acm_cxlove/article/details/7854526" target="_blank" rel="noopener">https://blog.csdn.net/acm_cxlove/article/details/7854526</a></p>
 
       
 
@@ -267,11 +267,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hash</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">博弈论</a>
         		</li>
       		
 		</ul>
@@ -327,7 +327,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2019/10/28/leetcode_436-寻找右区间/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/05/leetcode_石头游戏合集/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -341,18 +341,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/10/28/436-寻找右区间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          436.寻找右区间
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/24/leet-code-658-找到K个最接近的元素/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">leet_code_658.找到K个最接近的元素</div>
+    <a href="/2020/04/02/leetcode_289_生命游戏/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">289.生命游戏</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -379,7 +370,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leet-code-436-寻找右区间"><span class="toc-number">1.</span> <span class="toc-text">leet_code_ 436_寻找右区间</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#leetcode-石子游戏系列"><span class="toc-number">1.</span> <span class="toc-text">leetcode_石子游戏系列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
