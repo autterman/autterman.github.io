@@ -6,15 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>Tag: 栈 | Autter</title>
+  <title>Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="作者：田昭铭链接：https://www.nowcoder.com/discuss/403902?toCommentId=5837555来源：牛客网 360-核心安全-大数据开发（一面） 一面：43min  04-09 14:00 1、自我介绍 2、考研还是保研？本科学了哪些计算机的课程？（因为本科是学物理的）研一学了哪些相关课程？ 3、介绍项目，遇到过哪些问题？怎么解决的？（数据倾斜）还有一些其">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Autter">
-<meta property="og:url" content="http://www.autterman.cn/tags/栈/index.html">
+<meta property="og:url" content="http://www.autterman.cn/2020/04/16/360/index.html">
 <meta property="og:site_name" content="Autter">
+<meta property="og:description" content="作者：田昭铭链接：https://www.nowcoder.com/discuss/403902?toCommentId=5837555来源：牛客网 360-核心安全-大数据开发（一面） 一面：43min  04-09 14:00 1、自我介绍 2、考研还是保研？本科学了哪些计算机的课程？（因为本科是学物理的）研一学了哪些相关课程？ 3、介绍项目，遇到过哪些问题？怎么解决的？（数据倾斜）还有一些其">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="c:%5CUsers%5Csx%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324225329419.png">
+<meta property="og:updated_time" content="2020-04-16T03:01:18.419Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Autter">
+<meta name="twitter:description" content="作者：田昭铭链接：https://www.nowcoder.com/discuss/403902?toCommentId=5837555来源：牛客网 360-核心安全-大数据开发（一面） 一面：43min  04-09 14:00 1、自我介绍 2、考研还是保研？本科学了哪些计算机的课程？（因为本科是学物理的）研一学了哪些相关课程？ 3、介绍项目，遇到过哪些问题？怎么解决的？（数据倾斜）还有一些其">
+<meta name="twitter:image" content="c:%5CUsers%5Csx%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324225329419.png">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -164,68 +170,270 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-360" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>作者：田昭铭<br>链接：<a href="https://www.nowcoder.com/discuss/403902?toCommentId=5837555" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/403902?toCommentId=5837555</a><br>来源：牛客网</p>
+<p>360-核心安全-大数据开发（一面）</p>
+<p>一面：43min  04-09 14:00</p>
+<p>1、自我介绍</p>
+<p>2、考研还是保研？本科学了哪些计算机的课程？（因为本科是学物理的）研一学了哪些相关课程？</p>
+<p>3、介绍项目，遇到过哪些问题？怎么解决的？（数据倾斜）还有一些其他业务上的问题？</p>
+<p>4、介绍下HDFS？你们项目中HDFS的大小？</p>
+<p>5、MapReduce的执行流程？Map的分片有多大？</p>
+<p>6、Hive内部表和外部表？建表语句？为什么要分区？</p>
+<p>7、SQL题：统计词频最大的十个？如何进一步优化？（没想到了）</p>
+<p>8、算法题：（1）青蛙跳台阶</p>
+<p>9、算法题：（2）判断单链表是否是回文</p>
+<h1 id="360-面经"><a href="#360-面经" class="headerlink" title="360 面经"></a>360 面经</h1><h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><p><img src="C:%5CUsers%5Csx%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324225329419.png" alt="image-20200324225329419"></p>
+<h2 id="笔试："><a href="#笔试：" class="headerlink" title="笔试："></a>笔试：</h2><p>360笔试分为三部分，在类似acmcoder.com上考的。</p>
+<p>第一部分是逻辑题，包括图形智力题、数学等</p>
+<p>第二部分是技术题，范围很广：linux命令、Spring结构、JVM等等</p>
+<p>第三部分是编程题，有两道，用时一小时，可以从前面的题目里面挤出时间</p>
+<p><strong>重写DNA</strong></p>
+<p>给两段DNA，只由A T组成。例如 s1 = “ATTAA” s2 = “TAATT”,可以任意交换不同碱基的位置，比如3 和 5，或者可以改变一个位置的碱基。最终用最小的步数将s1变为s2。求最小步数。（DNA不是双链吗？？？）</p>
+<p>题目很简单，一想就能明白</p>
+<p>直接贴答案：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// ConsoleApplication9.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define dna_size 100000+5</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char s1[dna_size];</span><br><span class="line">    char s2[dna_size];</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    int len = strlen(s1);</span><br><span class="line">    int A_count = 0;</span><br><span class="line">    int T_count = 0;</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        if (s1[i] != s2[i])</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            if (s1[i] == &apos;A&apos;)A_count ++;</span><br><span class="line">            else  T_count ++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (A_count &gt; T_count) &#123;</span><br><span class="line">        cout &lt;&lt; A_count &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        cout &lt;&lt; T_count &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>抽奖</strong></p>
+<p>有n个中奖票，m个无奖票。有AB两人抽取。A先手，然后B抽奖，之后B随机抽取一张（抽到中奖票不算中奖）。如果出现中奖，游戏结束。问A抽奖获胜的概率</p>
+<p>第一反应是递归，会超时。然后应该是改为循环或者动态规划。过了27%，优化了一下还是不行，就交了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// ConsoleApplication10.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">double col(double n, double m) &#123;</span><br><span class="line">    if (abs(n - 0) &lt;= 0.0001) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 0) &lt;= 0.0001) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 1) &lt;= 0.0001) &#123;</span><br><span class="line">        return n/(n+1);</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 2) &lt;= 0.0001) &#123;</span><br><span class="line">        return n / (n + 2) + 2 / ((n + 2) * (n + 1));</span><br><span class="line">    &#125;</span><br><span class="line">    if ((n / m) &lt; 0.0001) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    double res = n / (m + n) + ((m * (m - 1)) / ((n + m) * (n + m - 1))) * ((n / (n + m - 2)) * col(n - 1, m - 2) + ((m - 2) / (n + m - 2)) * col(n - 1, m - 3));</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; col(n,m)&lt;&lt;endl ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>一面 43min：</strong></p>
+<ol>
+<li><p>自我介绍</p>
+</li>
+<li><p>问了下为啥不想读研，问学校的情况</p>
+</li>
+<li><p>投了哪些公司</p>
+</li>
+<li><p>问了两个项目（KV数据库、推荐系统）</p>
+<p>问了下项目中如何实现的Mysql和hdfs数据同步</p>
+</li>
+<li><p>讲一下对Hadoop的了解</p>
+<p>讲了下HDFS原理、MapReduce的过程，想讲HDFS检查点机制没让讲。</p>
+</li>
+<li><p>Spark和MapReduce的区别？是不是用了Spark就不需要MapReduce了？（答得不太好）</p>
+</li>
+<li><p>问对Hive的了解？</p>
+<p>自己提了下数据倾斜</p>
+</li>
+<li><p>如果有海量数据，如何求Top10?(说错了一块，后来又改过来了)</p>
+</li>
+<li><p>Linux平常用的指令？</p>
+<p>说了 ls 、 ll 、 df 、 nohup &amp;  、ps 、 kill 等等</p>
+<p>Hadoop用到的指令</p>
+<p>Hadoop fs -ls 、 mkdir、  hdfs fsck（查看块信息）</p>
+</li>
+<li><p>用什么语言比较多？ （我用的py比较多） Python常用的数据类型？ list 和 tuple的区别？</p>
+<p>回答了下 不可变对象和可变对象</p>
+</li>
+<li><p>常用的python库（requests 、bs4 、keras 等等）如何安装包</p>
+</li>
+<li><p>算法题：数组去重  上台阶、动态规划和递归的区别</p>
+</li>
+<li><p>还有什么问题要问我吗？（问了下缺不缺hc、主要工作内容）</p>
+</li>
+</ol>
+<p><strong>二面 23min</strong></p>
+<p>全程问项目，同时问了很多有没有看过Spark 源码 ES源码 Flask源码。</p>
+<p>各个项目问的比较深，算法模型等等。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就收藏噻<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/10/13/leetcode-11-盛更多水的容器/" class="archive-article-date >
+      </div>
+    </span>
+  </div>
+</div>
 
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/16/360/" alt="微信分享二维码">
+    </div>
+</div>
 
-
-  	<time datetime="2019-10-13T02:35:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-13</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/13/leetcode-11-盛更多水的容器/">leetcode_11_盛更多水的容器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">双指针</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">栈</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/10/4.8_阿里笔试试水/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第一次的笔试划水</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#360-面经"><span class="toc-number">1.</span> <span class="toc-text">360 面经</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程："><span class="toc-number">1.1.</span> <span class="toc-text">流程：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#笔试："><span class="toc-number">1.2.</span> <span class="toc-text">笔试：</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
     
 
+  
+  
+  
+
+  
+
+  
+
+  
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
 
           </div>
         </div>
@@ -280,9 +488,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
