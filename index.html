@@ -166,148 +166,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-360" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>作者：田昭铭<br>链接：<a href="https://www.nowcoder.com/discuss/403902?toCommentId=5837555" target="_blank" rel="noopener">https://www.nowcoder.com/discuss/403902?toCommentId=5837555</a><br>来源：牛客网</p>
-<p>360-核心安全-大数据开发（一面）</p>
-<p>一面：43min  04-09 14:00</p>
-<p>1、自我介绍</p>
-<p>2、考研还是保研？本科学了哪些计算机的课程？（因为本科是学物理的）研一学了哪些相关课程？</p>
-<p>3、介绍项目，遇到过哪些问题？怎么解决的？（数据倾斜）还有一些其他业务上的问题？</p>
-<p>4、介绍下HDFS？你们项目中HDFS的大小？</p>
-<p>5、MapReduce的执行流程？Map的分片有多大？</p>
-<p>6、Hive内部表和外部表？建表语句？为什么要分区？</p>
-<p>7、SQL题：统计词频最大的十个？如何进一步优化？（没想到了）</p>
-<p>8、算法题：（1）青蛙跳台阶</p>
-<p>9、算法题：（2）判断单链表是否是回文</p>
-<h1 id="360-面经"><a href="#360-面经" class="headerlink" title="360 面经"></a>360 面经</h1><h2 id="流程："><a href="#流程：" class="headerlink" title="流程："></a>流程：</h2><p><img src="C:%5CUsers%5Csx%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200324225329419.png" alt="image-20200324225329419"></p>
-<h2 id="笔试："><a href="#笔试：" class="headerlink" title="笔试："></a>笔试：</h2><p>360笔试分为三部分，在类似acmcoder.com上考的。</p>
-<p>第一部分是逻辑题，包括图形智力题、数学等</p>
-<p>第二部分是技术题，范围很广：linux命令、Spring结构、JVM等等</p>
-<p>第三部分是编程题，有两道，用时一小时，可以从前面的题目里面挤出时间</p>
-<p><strong>重写DNA</strong></p>
-<p>给两段DNA，只由A T组成。例如 s1 = “ATTAA” s2 = “TAATT”,可以任意交换不同碱基的位置，比如3 和 5，或者可以改变一个位置的碱基。最终用最小的步数将s1变为s2。求最小步数。（DNA不是双链吗？？？）</p>
-<p>题目很简单，一想就能明白</p>
-<p>直接贴答案：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">// ConsoleApplication9.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">#define dna_size 100000+5</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    char s1[dna_size];</span><br><span class="line">    char s2[dna_size];</span><br><span class="line">    cin &gt;&gt; s1 &gt;&gt; s2;</span><br><span class="line">    int len = strlen(s1);</span><br><span class="line">    int A_count = 0;</span><br><span class="line">    int T_count = 0;</span><br><span class="line">    for (int i = 0; i &lt; len; i++) &#123;</span><br><span class="line">        if (s1[i] != s2[i])</span><br><span class="line">        &#123;</span><br><span class="line"></span><br><span class="line">            if (s1[i] == &apos;A&apos;)A_count ++;</span><br><span class="line">            else  T_count ++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    if (A_count &gt; T_count) &#123;</span><br><span class="line">        cout &lt;&lt; A_count &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        cout &lt;&lt; T_count &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>抽奖</strong></p>
-<p>有n个中奖票，m个无奖票。有AB两人抽取。A先手，然后B抽奖，之后B随机抽取一张（抽到中奖票不算中奖）。如果出现中奖，游戏结束。问A抽奖获胜的概率</p>
-<p>第一反应是递归，会超时。然后应该是改为循环或者动态规划。过了27%，优化了一下还是不行，就交了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">// ConsoleApplication10.cpp : 此文件包含 &quot;main&quot; 函数。程序执行将在此处开始并结束。</span><br><span class="line">//</span><br><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">double col(double n, double m) &#123;</span><br><span class="line">    if (abs(n - 0) &lt;= 0.0001) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 0) &lt;= 0.0001) &#123;</span><br><span class="line">        return 1;</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 1) &lt;= 0.0001) &#123;</span><br><span class="line">        return n/(n+1);</span><br><span class="line">    &#125;</span><br><span class="line">    if (abs(m - 2) &lt;= 0.0001) &#123;</span><br><span class="line">        return n / (n + 2) + 2 / ((n + 2) * (n + 1));</span><br><span class="line">    &#125;</span><br><span class="line">    if ((n / m) &lt; 0.0001) &#123;</span><br><span class="line">        return 0;</span><br><span class="line">    &#125;</span><br><span class="line">    double res = n / (m + n) + ((m * (m - 1)) / ((n + m) * (n + m - 1))) * ((n / (n + m - 2)) * col(n - 1, m - 2) + ((m - 2) / (n + m - 2)) * col(n - 1, m - 3));</span><br><span class="line">    return res;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    double n, m;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line"></span><br><span class="line">    cout &lt;&lt; col(n,m)&lt;&lt;endl ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>一面 43min：</strong></p>
-<ol>
-<li><p>自我介绍</p>
-</li>
-<li><p>问了下为啥不想读研，问学校的情况</p>
-</li>
-<li><p>投了哪些公司</p>
-</li>
-<li><p>问了两个项目（KV数据库、推荐系统）</p>
-<p>问了下项目中如何实现的Mysql和hdfs数据同步</p>
-</li>
-<li><p>讲一下对Hadoop的了解</p>
-<p>讲了下HDFS原理、MapReduce的过程，想讲HDFS检查点机制没让讲。</p>
-</li>
-<li><p>Spark和MapReduce的区别？是不是用了Spark就不需要MapReduce了？（答得不太好）</p>
-</li>
-<li><p>问对Hive的了解？</p>
-<p>自己提了下数据倾斜</p>
-</li>
-<li><p>如果有海量数据，如何求Top10?(说错了一块，后来又改过来了)</p>
-</li>
-<li><p>Linux平常用的指令？</p>
-<p>说了 ls 、 ll 、 df 、 nohup &amp;  、ps 、 kill 等等</p>
-<p>Hadoop用到的指令</p>
-<p>Hadoop fs -ls 、 mkdir、  hdfs fsck（查看块信息）</p>
-</li>
-<li><p>用什么语言比较多？ （我用的py比较多） Python常用的数据类型？ list 和 tuple的区别？</p>
-<p>回答了下 不可变对象和可变对象</p>
-</li>
-<li><p>常用的python库（requests 、bs4 、keras 等等）如何安装包</p>
-</li>
-<li><p>算法题：数组去重  上台阶、动态规划和递归的区别</p>
-</li>
-<li><p>还有什么问题要问我吗？（问了下缺不缺hc、主要工作内容）</p>
-</li>
-</ol>
-<p><strong>二面 23min</strong></p>
-<p>全程问项目，同时问了很多有没有看过Spark 源码 ES源码 Flask源码。</p>
-<p>各个项目问的比较深，算法模型等等。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/16/360/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
     <article id="post-4.8_阿里笔试试水" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
@@ -1261,6 +1119,113 @@
   </section>
 
   
+    <article id="post-leetcode_240-搜索矩阵2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2019/10/31/leetcode_240-搜索矩阵2/" class="archive-article-date >
+
+
+
+  	<time datetime="2019-10-31T08:02:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-31</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="leetcode-240-搜索二维矩阵-II"><a href="#leetcode-240-搜索二维矩阵-II" class="headerlink" title="leetcode_240_搜索二维矩阵 II"></a>leetcode_240_搜索二维矩阵 II</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target。该矩阵具有以下特性：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>每行的元素从左到右升序排列。</span><br><span class="line"><span class="number">2.</span> 每列的元素从上到下升序排列。</span><br><span class="line">示例:</span><br><span class="line">现有矩阵 matrix 如下：</span><br><span class="line">[</span><br><span class="line">  [<span class="number">1</span>,   <span class="number">4</span>,  <span class="number">7</span>, <span class="number">11</span>, <span class="number">15</span>],</span><br><span class="line">  [<span class="number">2</span>,   <span class="number">5</span>,  <span class="number">8</span>, <span class="number">12</span>, <span class="number">19</span>],</span><br><span class="line">  [<span class="number">3</span>,   <span class="number">6</span>,  <span class="number">9</span>, <span class="number">16</span>, <span class="number">22</span>],</span><br><span class="line">  [<span class="number">10</span>, <span class="number">13</span>, <span class="number">14</span>, <span class="number">17</span>, <span class="number">24</span>],</span><br><span class="line">  [<span class="number">18</span>, <span class="number">21</span>, <span class="number">23</span>, <span class="number">26</span>, <span class="number">30</span>]</span><br><span class="line">]</span><br><span class="line">给定 target = <span class="number">5</span>，返回 true。</span><br><span class="line">给定 target = <span class="number">20</span>，返回 false。</span><br></pre></td></tr></table></figure>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分法</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/10/31/leetcode_240-搜索矩阵2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1400,19 +1365,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1424,6 +1381,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">双指针</a>
               </li>
              
@@ -1432,15 +1393,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1449,10 +1414,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1468,7 +1429,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
+                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1481,6 +1442,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
             
             <div class="clearfix"></div>
