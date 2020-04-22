@@ -6,20 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>第一次的笔试划水 | Autter</title>
+  <title>剑指Offer-链表-寻找链表环的入口 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="试水成功水深水浅，一试便知！投简历来的第一次笔试，给了阿里，两道编程题，很凉很清爽！虽然AC了个鹅蛋，但还是有收获的，知道了自己的水平，路漫漫，任重道远，熟悉在线编程的输入输出格式，刷题时，除了Python,也用Java写写，渐渐把java作为自己的主要语言。 编程题1：训练游戏：你可以攻击n次，有m个小兵，每个小兵的血量为a,你的攻击范围是b（每次能打到b个小兵，当一次攻击结束，小兵血量为0，便">
-<meta name="keywords" content="BFS,dp">
+  <meta name="description" content="题目描述给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。">
+<meta name="keywords" content="快慢指针,链表">
 <meta property="og:type" content="article">
-<meta property="og:title" content="第一次的笔试划水">
-<meta property="og:url" content="http://www.autterman.cn/2020/04/10/4.8_阿里笔试试水/index.html">
+<meta property="og:title" content="剑指Offer-链表-寻找链表环的入口">
+<meta property="og:url" content="http://www.autterman.cn/2020/04/21/剑指offer-链表-寻找链表的环的入口/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="试水成功水深水浅，一试便知！投简历来的第一次笔试，给了阿里，两道编程题，很凉很清爽！虽然AC了个鹅蛋，但还是有收获的，知道了自己的水平，路漫漫，任重道远，熟悉在线编程的输入输出格式，刷题时，除了Python,也用Java写写，渐渐把java作为自己的主要语言。 编程题1：训练游戏：你可以攻击n次，有m个小兵，每个小兵的血量为a,你的攻击范围是b（每次能打到b个小兵，当一次攻击结束，小兵血量为0，便">
+<meta property="og:description" content="题目描述给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-12T07:37:13.808Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200421215113517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2020-04-21T13:51:38.070Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="第一次的笔试划水">
-<meta name="twitter:description" content="试水成功水深水浅，一试便知！投简历来的第一次笔试，给了阿里，两道编程题，很凉很清爽！虽然AC了个鹅蛋，但还是有收获的，知道了自己的水平，路漫漫，任重道远，熟悉在线编程的输入输出格式，刷题时，除了Python,也用Java写写，渐渐把java作为自己的主要语言。 编程题1：训练游戏：你可以攻击n次，有m个小兵，每个小兵的血量为a,你的攻击范围是b（每次能打到b个小兵，当一次攻击结束，小兵血量为0，便">
+<meta name="twitter:title" content="剑指Offer-链表-寻找链表环的入口">
+<meta name="twitter:description" content="题目描述给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200421215113517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -165,7 +167,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-4.8_阿里笔试试水" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-剑指offer-链表-寻找链表的环的入口" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -173,11 +175,11 @@
       <header class="article-header">
         
         
-        <a href="/2020/04/10/4.8_阿里笔试试水/" class="archive-article-date >
+        <a href="/2020/04/21/剑指offer-链表-寻找链表的环的入口/" class="archive-article-date >
 
 
 
-  	<time datetime="2020-04-10T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+  	<time datetime="2020-04-21T13:47:47.823Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
         <!--显示阅读次数-->
         
@@ -217,27 +219,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="试水成功"><a href="#试水成功" class="headerlink" title="试水成功"></a>试水成功</h2><p><strong>水深水浅，一试便知！</strong><br>投简历来的第一次笔试，给了阿里，两道编程题，很凉很清爽！<br>虽然AC了个鹅蛋，但还是有收获的，知道了自己的水平，路漫漫，任重道远，熟悉在线编程的输入输出格式，刷题时，除了Python,也用Java写写，渐渐把java作为自己的主要语言。</p>
-<h4 id="编程题1："><a href="#编程题1：" class="headerlink" title="编程题1："></a>编程题1：</h4><p>训练游戏：你可以攻击n次，有m个小兵，每个小兵的血量为a,你的攻击范围是b（每次能打到b个小兵，当一次攻击结束，小兵血量为0，便被消灭）,计算训练结束后，你能灭掉几个小兵？</p>
-<a id="more"></a> 
-<p><strong>分析:</strong></p>
-<pre><code>1.如果攻击范围大于等于小兵个数,就看攻击次数和小兵血量
+        <h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>给一个链表，若其中包含环，请找出该链表的环的入口结点，否则，输出null。</p>
+<a id="more"></a>
+<p><strong>分析：</strong> 快慢指针<br><img src="https://img-blog.csdnimg.cn/20200421215113517.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<ol>
+<li>设快慢指针，fast,slow,快慢指针初始都指向链表头部，快指针每次走两步，慢指针每次走一步，若链表没环，快指针会走到链表末尾。若链表存在环，那么快慢指针一定会在环内的某个结点相遇，因为快指针每次走两步，比慢指针快一步，所以早晚会赶上慢指针然后相遇。</li>
+<li>我们设 不含环的链表部分结点数为 a（不含入口结点），环链表的部分结点数为 b.<br>假设 第一次快慢指针第一次相遇时，慢指针走了 x 步，那么快指针就走了 2x 步， 两指针一共走的步数为 S ，S = 3x.<br>快慢指针相遇时，去掉两者没入环之前都会走的 a 个结点，快指针会在环里比慢指针多走 m 个环，m 为一常数，<br>即 2x - mb = x  ==》 x = mb，相当于在快慢指针第一次相遇时，慢指针走了 m 个环的长度，快指针走了2m个环的长度。</li>
+<li>题目是要找环的入口， 我们假设慢指针从头走了 k 步，那么走到链表入口结点的步数就可以这样表示 k = a + kb,k为任意常数， 在环内绕了m圈走到入口节点，那么目前慢指针已经走了 mb 个结点，令 k = m , 那么此时慢指针再走个 a 步，就可以回到环的入口节点，为了找到入口节点，我们在快慢指针第一次相遇后，定义一个指针指向链表头部，每次走一步，和慢指针一起向前走 a 步后相遇，相遇的结点就是入口节点。<br>python 解法：<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">detectCycle</span><span class="params">(head)</span>:</span></span><br><span class="line">    <span class="string">"""</span></span><br><span class="line"><span class="string">    :type head: ListNode</span></span><br><span class="line"><span class="string">    :rtype: ListNode</span></span><br><span class="line"><span class="string">    """</span></span><br><span class="line">    <span class="comment">#定义快慢指针</span></span><br><span class="line">    fast,slow = head,head</span><br><span class="line">    <span class="keyword">while</span> fast :</span><br><span class="line">         <span class="comment">#快指针走到链表尾，不存在环</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> (fast <span class="keyword">and</span> fast.next <span class="keyword">and</span> fast.next.next):</span><br><span class="line">            <span class="keyword">return</span> </span><br><span class="line">        fast = fast.next.next</span><br><span class="line">        slow = slow.next</span><br><span class="line">        <span class="keyword">if</span> fast == slow:</span><br><span class="line">            <span class="comment">#快慢指针第一次相遇后，定义一个指向头结点的指针，每次走一步</span></span><br><span class="line">            start = head </span><br><span class="line">            <span class="keyword">while</span> start != slow:</span><br><span class="line">                start = start.next</span><br><span class="line">                slow = slow.next</span><br><span class="line">            <span class="comment">#找到环入口结点</span></span><br><span class="line">            <span class="keyword">return</span> start</span><br></pre></td></tr></table></figure>
 
-    a.如果小兵血量小于攻击次数，则小兵全部消灭
-    b.如果小兵血量大于攻击次数，则 一个都没法消灭
-2.如果攻击范围小于小兵个数， 就要让火力得到有效利用
+</li>
+</ol>
+<p>java 解法：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> public class ListNode &#123;</span></span><br><span class="line"><span class="comment">    int val;</span></span><br><span class="line"><span class="comment">    ListNode next = null;</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">    ListNode(int val) &#123;</span></span><br><span class="line"><span class="comment">        this.val = val;</span></span><br><span class="line"><span class="comment">    &#125;</span></span><br><span class="line"><span class="comment">&#125;</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">EntryNodeOfLoop</span><span class="params">(ListNode pHead)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ListNode fast = pHead;</span><br><span class="line">        ListNode slow = pHead;</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span> (fast == <span class="keyword">null</span> || fast.next == <span class="keyword">null</span> || fast.next.next == <span class="keyword">null</span>)&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            fast = fast.next.next;</span><br><span class="line">            slow = slow.next;</span><br><span class="line">            <span class="keyword">if</span>(fast == slow)&#123;</span><br><span class="line">                ListNode start = pHead;</span><br><span class="line">                <span class="keyword">while</span>(start != slow)&#123;</span><br><span class="line">                    start = start.next;</span><br><span class="line">                    slow = slow.next;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> start;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    如果小兵个数足够多的话，能消灭n*b // a，
-    小兵个数小于 n * b //a （有效火力）的话，小兵全被消灭。</code></pre><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">T = int(input())</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(T):</span><br><span class="line">    nmab = list(map(int,input().split()))</span><br><span class="line">    n = nmab[<span class="number">0</span>]</span><br><span class="line">    m = nmab[<span class="number">1</span>]</span><br><span class="line">    a = nmab[<span class="number">2</span>]</span><br><span class="line">    b = nmab[<span class="number">3</span>]</span><br><span class="line">    <span class="keyword">if</span> b &gt;= m :</span><br><span class="line">        <span class="keyword">if</span> a &lt;= n : print(m)</span><br><span class="line">        <span class="keyword">if</span> a &gt; n :print(<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">else</span>:<span class="comment">#攻击范围小于小兵数量</span></span><br><span class="line">        count = n * b // a</span><br><span class="line">        <span class="keyword">if</span> count &gt;= m:</span><br><span class="line">            print(m)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            print(count)</span><br></pre></td></tr></table></figure>
-
-<h4 id="编程题2"><a href="#编程题2" class="headerlink" title="编程题2"></a><strong>编程题2</strong></h4><p><strong>问题描述</strong><br>方格游戏，给一个n*n的矩阵，矩阵的每一个位置都有一个值，初始的时候在左上角出发，并获得该位置的值作为初始能量，每一次可以选择上下左右四个方向的一个，<br>并且可以移动，距离不大于K，并要保证到达的格子的值要比当前位置的值大，否则不能走，当无法移动时，游戏结束。求出所有移动方案中，到达的位置的格子值相加总和的最大值。</p>
-<p>输入描述：<br>    1. 输入第一行一个整数T,代表有T组测试数据<br>    2. 接下来输入两个整数n，k,代表矩阵的大小，以及每一步<br>           最多走多少<br>    3. 最后输入每个格子上的值<br> 输出描述：<br>     输出最大路径和</p>
-<p><strong>分析：</strong><br>解法一：用广度优先遍历，由于下次节点值比本次大，所以无需用visited矩阵记录走过位置。<br>    队列中存放的状态节点包括(x,y,fees)， 前两个是坐标，第三个是累计花销，并在入队列处滚动刷新最大花销值。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> collections</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gridgame1</span><span class="params">(array,n,k)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> n == <span class="number">0</span> : <span class="keyword">return</span> <span class="number">0</span></span><br><span class="line">    queue = collections.deque()</span><br><span class="line">    queue.append((<span class="number">0</span>,<span class="number">0</span>,array[<span class="number">0</span>][<span class="number">0</span>]))</span><br><span class="line">    max_fees = <span class="number">0</span></span><br><span class="line">    dx = [<span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>, <span class="number">0</span>]</span><br><span class="line">    dy = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>, <span class="number">-1</span>]</span><br><span class="line">    <span class="keyword">while</span> queue:</span><br><span class="line">        tmp = queue.popleft()</span><br><span class="line">        x,y,fee = tmp</span><br><span class="line">        max_fees = fee <span class="keyword">if</span> fee &gt; max_fees <span class="keyword">else</span> max_fees</span><br><span class="line">        print(queue)</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">4</span>):</span><br><span class="line">            <span class="keyword">for</span> step <span class="keyword">in</span> range(<span class="number">1</span>,k+<span class="number">1</span>):</span><br><span class="line">                nx = x + step*dx[i]</span><br><span class="line">                ny = y + step*dy[i]</span><br><span class="line">                <span class="keyword">if</span> nx &gt;= <span class="number">0</span> <span class="keyword">and</span> nx &lt;=n<span class="number">-1</span> <span class="keyword">and</span> ny &gt;= <span class="number">0</span> <span class="keyword">and</span> ny &lt;= n<span class="number">-1</span> <span class="keyword">and</span> array[nx][ny] &gt; array[x][y]:</span><br><span class="line">                    queue.append((nx,ny,array[nx][ny] + fee))</span><br><span class="line">    print(max_fees)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__==<span class="string">"__main__"</span>:</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        T = int(input())</span><br><span class="line">        <span class="keyword">for</span> iter <span class="keyword">in</span> range(T):</span><br><span class="line">            nk = input().split(<span class="string">' '</span>)</span><br><span class="line">            n = int(nk[<span class="number">0</span>])</span><br><span class="line">            k = int(nk[<span class="number">1</span>])</span><br><span class="line">            array = []</span><br><span class="line">            <span class="keyword">for</span> i <span class="keyword">in</span> range(n):</span><br><span class="line">                array.append(list(map(int, input().split())))</span><br><span class="line">            gridgame1(array, n, k)</span><br><span class="line">    <span class="keyword">except</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
-
-<p>看了很多牛客上大佬的题解，大多是使用DP,大概思路是<br>f(i,j)代表走到（i，j）位置的最优策略。</p>
-<p><em>f(i,j) = max(f(i±k,j±k)|grid[i±k][j±k] &gt; grid[i][j])<br>base case :f(0,0) = grid[i][j]</em><br>最终结果，走到不能走。</p>
-<p>看了代码就觉得DP是玄学问题，DP数组的定义直接决定了解题的难度，所以，只能是多练加总结！</p>
 
       
 
@@ -272,11 +266,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">快慢指针</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">链表</a>
         		</li>
       		
 		</ul>
@@ -332,7 +326,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/10/4.8_阿里笔试试水/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/21/剑指offer-链表-寻找链表的环的入口/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -346,18 +340,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/21/剑指offer-链表-寻找链表的环的入口/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          剑指Offer-链表-寻找链表环的入口
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/05/leetcode_石头游戏合集/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">石子游戏系列（博弈问题）</div>
+    <a href="/2020/04/10/4.8_阿里笔试试水/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">第一次的笔试划水</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -384,7 +369,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#试水成功"><span class="toc-number">1.</span> <span class="toc-text">试水成功</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#编程题1："><span class="toc-number">1.0.1.</span> <span class="toc-text">编程题1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#编程题2"><span class="toc-number">1.0.2.</span> <span class="toc-text">编程题2</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li></ol>
                     </div>
                 </span>
             </div>
