@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Autter">
 <meta property="og:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-25T14:30:15.834Z">
+<meta property="og:updated_time" content="2020-04-25T14:36:53.725Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 基础">
 <meta name="twitter:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
@@ -239,15 +239,9 @@
 </ol>
 <p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
 <p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
-<h6 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h6><ol>
-<li>final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</li>
-</ol>
-<ol start="2">
-<li><p>finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
-</li>
-<li><p>finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalized()方法以整理系统资源或者被执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
-</li>
-</ol>
+<h6 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h6><p>1.final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</p>
+<p>2.finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
+<p>3.finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalized()方法以整理系统资源或者被执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
 
       
 
@@ -582,11 +576,31 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">中等</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,23 +616,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -634,7 +632,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -643,10 +641,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -662,19 +656,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简单</a>
+                <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -683,6 +669,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
              
               <li class="article-tag-list-item">
