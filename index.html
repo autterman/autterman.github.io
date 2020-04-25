@@ -167,34 +167,25 @@
 
 
     
+      <header class="article-header">
+        
+        
+        <a href="/2020/04/25/Java基础/" class="archive-article-date >
+
+
+
+  	<time datetime="2020-04-25T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-String-StringBulider-StringBuffer的区别？"><a href="#1-String-StringBulider-StringBuffer的区别？" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h3><h3 id="2-final-finally-finallized的区别？"><a href="#2-final-finally-finallized的区别？" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h3><h3 id="3-与equals的区别？"><a href="#3-与equals的区别？" class="headerlink" title="3. == 与equals的区别？"></a>3. == 与equals的区别？</h3><p>可从两个方面说：线程安全和速度。<br>1.1 首先说运行速度： StringBuilder &gt; StringBuffer &gt; String<br>    String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，<br>    ## 即String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。<br>    以下面一段代码为例：<br>    String str=”abc”;<br>    System.out.println(str);<br>    str=str+”de”;<br>    System.out.println(str);</p>
-<p>如果运行这段代码会发现先输出“abc”，然后又输出“abcde”，好像是str这个对象被更改了，其实，这只是一种假象罢了，JVM对于这几行代码是这样处理的，首先创建一个String对象str，并把“abc”赋值给str，然后在第三行中，其实JVM又创建了一个新的对象也名为str，然后再把原来的str的值和“de”加起来再赋值给新的str，而原来的str就会被JVM的垃圾回收机制（GC）给回收掉了，所以，str实际上并没有被更改，也就是前面说的String对象一旦创建之后就不可更改了。所以，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。</p>
-<p>而StringBuilder和StringBuffer的对象是变量，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
-<p>　　另外，有时候我们会这样对字符串进行赋<br>1 String str=”abc”+”de”;<br>2 StringBuilder stringBuilder=new StringBuilder().append(“abc”).append(“de”);<br>3 System.out.println(str);<br>4 System.out.println(stringBuilder.toString());</p>
-<p>这样输出结果也是“abcde”和“abcde”，但是String的速度却比StringBuilder的反应速度要快很多，这是因为第1行中的操作和</p>
-<p>　　String str=”abcde”;</p>
-<p>　　是完全一样的，所以会很快，而如果写成下面这种形式<br>    1 String str1=”abc”;<br>    2 String str2=”de”;<br>    3 String str=str1+str2;<br>那么JVM就会像上面说的那样，不断的创建、回收对象来进行这个操作了。速度就会很慢。</p>
-<ol start="2">
-<li>再说线程安全问题<br>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</li>
-</ol>
-<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</p>
-<ol start="3">
-<li>总结一下<br>　　String：适用于少量的字符串操作的情况</li>
-</ol>
-<p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
-<p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
-<h4 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h4><ol>
-<li>final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</li>
-</ol>
-<ol start="2">
-<li><p>finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
-</li>
-<li><p>finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalize（）方法以整理系统资源或者被执行其他清理工作。</p>
-<h2 id="finalize（）方法是在垃圾收集器删除对象之前对这个对象调用的。"><a href="#finalize（）方法是在垃圾收集器删除对象之前对这个对象调用的。" class="headerlink" title="finalize（）方法是在垃圾收集器删除对象之前对这个对象调用的。"></a>finalize（）方法是在垃圾收集器删除对象之前对这个对象调用的。</h2></li>
-</ol>
-
+        <h5 id="1-String-StringBulider-StringBuffer的区别？"><a href="#1-String-StringBulider-StringBuffer的区别？" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h5><h5 id="2-final-finally-finallized的区别？"><a href="#2-final-finally-finallized的区别？" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h5><h5 id="3-与-equals-的区别？"><a href="#3-与-equals-的区别？" class="headerlink" title="3. == 与 equals 的区别？"></a>3. == 与 equals 的区别？</h5>
+        
       
 
       
@@ -202,11 +193,30 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">StringBulider&StringBuffer</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">final&finally&finallized</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">==&equals</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/22/Java基础/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/25/Java基础/">展开全文 >></a>
         </p>
       
 
@@ -1345,11 +1355,35 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">中等</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">StringBulider&StringBuffer</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">final&finally&finallized</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">==&equals</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1358,10 +1392,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1377,19 +1407,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1401,11 +1419,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1418,6 +1436,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简单</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1434,14 +1464,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">手撕排序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
             
             <div class="clearfix"></div>

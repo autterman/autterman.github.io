@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>Tag: 博弈论 | Autter</title>
+  <title>java 基础 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Autter">
-<meta property="og:url" content="http://www.autterman.cn/tags/博弈论/index.html">
+  <meta name="description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
+<meta name="keywords" content="StringBulider&amp;StringBuffer,final&amp;finally&amp;finallized,==&amp;equals">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java 基础">
+<meta property="og:url" content="http://www.autterman.cn/2020/04/25/Java基础/index.html">
 <meta property="og:site_name" content="Autter">
+<meta property="og:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2020-04-25T14:30:15.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Autter">
+<meta name="twitter:title" content="java 基础">
+<meta name="twitter:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -160,68 +165,298 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Java基础" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/05/leetcode_石头游戏合集/" class="archive-article-date >
+      <header class="article-header">
+        
+        
+        <a href="/2020/04/25/Java基础/" class="archive-article-date >
 
 
 
-  	<time datetime="2020-04-05T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
+  	<time datetime="2020-04-25T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/05/leetcode_石头游戏合集/">石子游戏系列（博弈问题）</a>
-    </h1>
-  
+        <!--显示阅读次数-->
+        
+        
+           
+        <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+      
+    
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+            <span class="icon-sort"></span>
+         
+            <span class="archive-article-date">
+                阅读量 <span id="busuanzi_value_page_pv"></span>
+            </span>
+          </a>
+        
+        
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="1-String-StringBulider-StringBuffer的区别？"><a href="#1-String-StringBulider-StringBuffer的区别？" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h5><h5 id="2-final-finally-finallized的区别？"><a href="#2-final-finally-finallized的区别？" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h5><h5 id="3-与-equals-的区别？"><a href="#3-与-equals-的区别？" class="headerlink" title="3. == 与 equals 的区别？"></a>3. == 与 equals 的区别？</h5><a id="more"></a> 
+<h5 id="1-String-StringBulider-StringBuffer的区别？-1"><a href="#1-String-StringBulider-StringBuffer的区别？-1" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h5><p>可从两个方面说：线程安全和速度。<br>1.1 首先说运行速度： StringBuilder &gt; StringBuffer &gt; String<br>    String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，<br>    String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。<br>    以下面一段代码为例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str);</span><br><span class="line">str=str+<span class="string">"de"</span>;</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
+
+<p>如果运行这段代码会发现先输出“abc”，然后又输出“abcde”，好像是str这个对象被更改了，其实，这只是一种假象罢了，JVM对于这几行代码是这样处理的，首先创建一个String对象str，并把“abc”赋值给str，然后在第三行中，其实JVM又创建了一个新的对象也名为str，然后再把原来的str的值和“de”加起来再赋值给新的str，而原来的str就会被JVM的垃圾回收机制（GC）给回收掉了，所以，str实际上并没有被更改，也就是前面说的String对象一旦创建之后就不可更改了。所以，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。</p>
+<p>而StringBuilder和StringBuffer的对象是变量，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
+<p>另外，有时候我们会这样对字符串进行赋</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">"abc"</span>+<span class="string">"de"</span>;</span><br><span class="line">StringBuilder stringBuilder=new StringBuilder().append(<span class="string">"abc"</span>).append(<span class="string">"de"</span>);</span><br><span class="line">System.out.println(str);</span><br><span class="line">System.out.println(stringBuilder.toString());</span><br></pre></td></tr></table></figure>
+
+<p>这样输出结果也是“abcde”和“abcde”，但是String的速度却比StringBuilder的反应速度要快很多，这是因为第1行中的操作和</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　String str=<span class="string">"abcde"</span>;</span><br><span class="line"></span><br><span class="line">　　是完全一样的，所以会很快，而如果写成下面这种形式</span><br><span class="line"><span class="number">1</span> String str1=<span class="string">"abc"</span>;</span><br><span class="line"><span class="number">2</span> String str2=<span class="string">"de"</span>;</span><br><span class="line"><span class="number">3</span> String str=str1+str2;</span><br></pre></td></tr></table></figure>
+
+<p>那么JVM就会像上面说的那样，不断的创建、回收对象来进行这个操作了。速度就会很慢。</p>
+<ol start="2">
+<li>再说线程安全问题<br>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</li>
+</ol>
+<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</p>
+<ol start="3">
+<li>总结一下<br>　　String：适用于少量的字符串操作的情况</li>
+</ol>
+<p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
+<p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
+<h6 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h6><ol>
+<li>final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</li>
+</ol>
+<ol start="2">
+<li><p>finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
+</li>
+<li><p>finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalized()方法以整理系统资源或者被执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
+</li>
+</ol>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就收藏噻<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">StringBulider&StringBuffer</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">博弈论</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">final&finally&finallized</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">==&equals</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/25/Java基础/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/21/剑指offer-链表-寻找链表的环的入口/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">剑指Offer-链表-寻找链表环的入口</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？"><span class="toc-number">1.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-final-finally-finallized的区别？"><span class="toc-number">2.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-与-equals-的区别？"><span class="toc-number">3.</span> <span class="toc-text">3. == 与 equals 的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？-1"><span class="toc-number">4.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-final-finally-finallized的区别？-1"><span class="toc-number">4.1.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
     
 
+  
+  
+  
+
+  
+
+  
+
+  
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
 
           </div>
         </div>
@@ -276,9 +511,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
