@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Autter">
 <meta property="og:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-04-25T14:36:53.725Z">
+<meta property="og:updated_time" content="2020-04-30T08:22:12.789Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java 基础">
 <meta name="twitter:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3. == 与 equals 的区别？">
@@ -242,6 +242,17 @@
 <h6 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h6><p>1.final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</p>
 <p>2.finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
 <p>3.finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalized()方法以整理系统资源或者被执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
+<h4 id="3-与-equals-的区别？-1"><a href="#3-与-equals-的区别？-1" class="headerlink" title="3.== 与 equals 的区别？"></a>3.== 与 equals 的区别？</h4><p>一、先说 “==” 对比情况分两种，对象对比、基本类型的对比。<br>比较的是变量(栈)内存中存放的对象的(堆)内存地址，用来判断两个对象的地址是否相同，即是否是指相同一个对象。比较的是真正意义上的指针操作。<br>首先说对象的比较    变量（栈）内存中存放的对象的（堆）内存地址，用来判断两个对象的地址是否相同，即是否是指相同的一个对象。比较的是真正意义上的指针操作。</p>
+<p>1.比较的是操作符两端的操作数是否是同一个对象。<br>2.两边的操作数必须是同一类型的（可以是父子类之间）才能编译通过。<br>3.比较的地址，如果是具体数据类型之间的比较String s1 = “abc”, s2 = “abc”;  Syetem.out.print(s1 = s2);打印为true,因为他们都是指向同一个地址，内容为’abc’。</p>
+<p>二、equals 方法比较</p>
+<p>由于所有的类都是继承自java.lang.Object类的，所以适用于所有对象，如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，由equals的源码可以看出这里定义的equals与==是等效的（Object类中的equals没什么区别），不同的原因就在于有些类（像String、Integer等类）对equals进行了重写，但是没有对equals进行重写的类（比如我们自己写的类）就只能从Object类中继承equals方法，其equals方法与==就也是等效的，除非我们在此类中重写equals。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">   	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>　对equals重新需要注意五点：</p>
+<p>　　1   自反性：对任意引用值X，x.equals(x)的返回值一定为true；<br>　　2   对称性：对于任何引用值x,y,当且仅当y.equals(x)返回值为true时，x.equals(y)的返回值一定为true；<br>　　3   传递性：如果x.equals(y)=true, y.equals(z)=true,则x.equals(z)=true ；<br>　　4   一致性：如果参与比较的对象没任何改变，则对象比较的结果也不应该有任何改变；<br>　　5   非空性：任何非空的引用值X，x.equals(null)的返回值一定为false 。</p>
+<p>运行速度： == 比 equals 速度快，因为 == 比较的对象的地址。</p>
+<p>总结来说：</p>
+<p>　　1）对于==，如果是用于基本数据类型的变量的比较，是比较“值”是否相等；<br>　　　　如果比较对象，则比较是栈内存地址<br>　　2）对于equals方法，注意：equals方法不能作用于基本数据类型的变量<br>　　　　如果没有对equals方法进行重写，也就是使用Object类里的equals方法，则比较的是对象的内存地址；<br>　　　　若String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容。</p>
 
       
 
@@ -383,7 +394,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？"><span class="toc-number">1.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-final-finally-finallized的区别？"><span class="toc-number">2.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-与-equals-的区别？"><span class="toc-number">3.</span> <span class="toc-text">3. == 与 equals 的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？-1"><span class="toc-number">4.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-final-finally-finallized的区别？-1"><span class="toc-number">4.1.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？"><span class="toc-number">1.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-final-finally-finallized的区别？"><span class="toc-number">2.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-与-equals-的区别？"><span class="toc-number">3.</span> <span class="toc-text">3. == 与 equals 的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？-1"><span class="toc-number">4.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#2-final-finally-finallized的区别？-1"><span class="toc-number">4.1.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-与-equals-的区别？-1"><span class="toc-number"></span> <span class="toc-text">3.== 与 equals 的区别？</span></a>
                     </div>
                 </span>
             </div>
@@ -592,14 +603,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hash</a>
               </li>
              
@@ -616,15 +619,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">双指针</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,7 +647,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -648,19 +659,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -672,19 +679,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简单</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">手撕排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">简单</a>
               </li>
             
             <div class="clearfix"></div>
