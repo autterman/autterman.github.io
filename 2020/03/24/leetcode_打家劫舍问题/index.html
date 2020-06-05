@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Autter">
 <meta property="og:description" content="打家劫舍问题题目描述你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-03-25T07:44:39.012Z">
+<meta property="og:updated_time" content="2020-05-29T02:30:28.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode_打家劫舍问题">
 <meta name="twitter:description" content="打家劫舍问题题目描述你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。">
@@ -231,12 +231,12 @@
 <p>计算在不触动警报的情况下，小偷一晚能够盗取的最高金额。</p>
 <h4 id="解法一：递归实现-重复子问题，先找到最小规模的问题，就是最优子结构；"><a href="#解法一：递归实现-重复子问题，先找到最小规模的问题，就是最优子结构；" class="headerlink" title="解法一：递归实现,重复子问题，先找到最小规模的问题，就是最优子结构；"></a>解法一：递归实现,重复子问题，先找到最小规模的问题，就是最优子结构；</h4><p>使用爷爷-两个孩子-4个孙子 小偷家族来说明问题，这个家族的每个成员偷到的钱就是对应二叉树结点的值。</p>
 <h6 id="问题的目标就是在这棵二叉树能偷到最多的钱。"><a href="#问题的目标就是在这棵二叉树能偷到最多的钱。" class="headerlink" title="问题的目标就是在这棵二叉树能偷到最多的钱。"></a>问题的目标就是在这棵二叉树能偷到最多的钱。</h6><p>可分为两种情况：4个孙子偷的钱 + 爷爷的钱 VS 两个儿子偷的钱<br>method1 = root.val + rob(root.left.left) + rob(root.left.right) +rob(root.right.left) + rob(root.right.right)<br>method2 = rob(root.left) + root(root.right)<br>时间复杂度：O（n*n)</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">robtree</span><span class="params">(root)</span>:</span></span><br><span class="line">	</span><br><span class="line">	dic = dict()</span><br><span class="line">	<span class="keyword">return</span> rob(root,dic)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(root,dic)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> root ==<span class="literal">None</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">	<span class="keyword">if</span> root <span class="keyword">in</span> dic.keys():</span><br><span class="line">		<span class="keyword">return</span> dic[root]</span><br><span class="line">	res = root.val</span><br><span class="line">	<span class="keyword">if</span> root.left:</span><br><span class="line">		res += rob(root.left.left)+rob(root.left.right)</span><br><span class="line">	<span class="keyword">if</span> root.right:</span><br><span class="line">		res += rob(root.right.left) + rob(root.right.right)</span><br><span class="line">	<span class="keyword">return</span> max(res,rob(root.left)+rob(root.right))</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">robtree</span><span class="params">(root)</span>:</span></span><br><span class="line">	</span><br><span class="line">	dic = dict()</span><br><span class="line">	<span class="keyword">return</span> rob(root,dic)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(root,dic)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> root ==<span class="literal">None</span>:</span><br><span class="line">		<span class="keyword">return</span> <span class="number">0</span> </span><br><span class="line">	<span class="keyword">if</span> root <span class="keyword">in</span> dic.keys():</span><br><span class="line">		<span class="keyword">return</span> dic[root]</span><br><span class="line">	res = root.val</span><br><span class="line">	<span class="keyword">if</span> root.left:</span><br><span class="line">		res += rob(root.left.left)+rob(root.left.right)</span><br><span class="line">	<span class="keyword">if</span> root.right:</span><br><span class="line">		res += rob(root.right.left) + rob(root.right.right)</span><br><span class="line">    res = max(res,rob(root.left)+rob(root.right))</span><br><span class="line">    dic[root] = res;</span><br><span class="line">	<span class="keyword">return</span> res</span><br></pre></td></tr></table></figure>
 
 <p><em>leetcode python 超出时间限制</em></p>
-<h4 id="解法2：使用DP-table-备忘录"><a href="#解法2：使用DP-table-备忘录" class="headerlink" title="解法2：使用DP table-备忘录"></a>解法2：使用DP table-备忘录</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    HashMap&lt;TreeNode, Integer&gt; memo = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">return</span> robInternal(root, memo);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">robInternal</span><span class="params">(TreeNode root, HashMap&lt;TreeNode, Integer&gt; memo)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (memo.containsKey(root)) <span class="keyword">return</span> memo.get(root);</span><br><span class="line">    <span class="keyword">int</span> money = root.val;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        money += (robInternal(root.left.left, memo) + robInternal(root.left.right, memo));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        money += (robInternal(root.right.left, memo) + robInternal(root.right.right, memo));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> result = Math.max(money, robInternal(root.left, memo) + robInternal(root.right, memo));</span><br><span class="line">    memo.put(root, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="java-解法"><a href="#java-解法" class="headerlink" title="java 解法"></a>java 解法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">rob</span><span class="params">(TreeNode root)</span> </span>&#123;</span><br><span class="line">    HashMap&lt;TreeNode, Integer&gt; memo = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    <span class="keyword">return</span> robInternal(root, memo);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">robInternal</span><span class="params">(TreeNode root, HashMap&lt;TreeNode, Integer&gt; memo)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (root == <span class="keyword">null</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (memo.containsKey(root)) <span class="keyword">return</span> memo.get(root);</span><br><span class="line">    <span class="keyword">int</span> money = root.val;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (root.left != <span class="keyword">null</span>) &#123;</span><br><span class="line">        money += (robInternal(root.left.left, memo) + robInternal(root.left.right, memo));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (root.right != <span class="keyword">null</span>) &#123;</span><br><span class="line">        money += (robInternal(root.right.left, memo) + robInternal(root.right.right, memo));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> result = Math.max(money, robInternal(root.left, memo) + robInternal(root.right, memo));</span><br><span class="line">    memo.put(root, result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="解法三"><a href="#解法三" class="headerlink" title="解法三"></a>解法三</h3><p>分析：不用备忘录，我们使用一个大小为2的数组来表示 int[] res = new int[2] 0代表不偷，1代表偷。<br>换一种方法定义问题，每个节点可以选择偷偷或者不偷两种状态，根据题目意思，相邻不能偷，所以,当前节点选择偷时，那么两个孩子节点就不能选择偷了;当前节点选择不偷时，两个孩子节点只需要拿最多的钱出来就行(两个孩子节点偷不偷没关系)<br><strong>单个节点状态转移方程如下：</strong><br>root[0] = Math.max(rob(root.left)[0], rob(root.left)[1]) + Math.max(rob(root.right)[0], rob(root.right)[1])<br>root[1] = rob(root.left)[0] + rob(root.right)[0] + root.val;</p>
+<h3 id="解法二"><a href="#解法二" class="headerlink" title="解法二"></a>解法二</h3><p>分析：不用备忘录，我们使用一个大小为2的数组来表示 int[] res = new int[2] 0代表不偷，1代表偷。<br>换一种方法定义问题，每个节点可以选择偷偷或者不偷两种状态，根据题目意思，相邻不能偷，所以,当前节点选择偷时，那么两个孩子节点就不能选择偷了;当前节点选择不偷时，两个孩子节点只需要拿最多的钱出来就行(两个孩子节点偷不偷没关系)<br><strong>单个节点状态转移方程如下：</strong><br>root[0] = Math.max(rob(root.left)[0], rob(root.left)[1]) + Math.max(rob(root.right)[0], rob(root.right)[1])<br>root[1] = rob(root.left)[0] + rob(root.right)[0] + root.val;</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">rob</span><span class="params">(root)</span>:</span></span><br><span class="line">	res = robtree(root)</span><br><span class="line">	<span class="keyword">return</span> max(res)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">robtree</span><span class="params">(root)</span>:</span></span><br><span class="line">	<span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">		<span class="keyword">return</span> [<span class="number">0</span>,<span class="number">0</span>]</span><br><span class="line">	left = robtree(left)</span><br><span class="line">	right = robtree(right)</span><br><span class="line"></span><br><span class="line">	rob = left[<span class="number">0</span>] +right[<span class="number">0</span>] + root.val</span><br><span class="line">	not_rob = max(left[<span class="number">0</span>],left[<span class="number">1</span>])+max(right[<span class="number">0</span>],right[<span class="number">1</span>])</span><br><span class="line">	<span class="keyword">return</span> [not_rob,rob]</span><br></pre></td></tr></table></figure>
 
 <p>现在偷家都要讲究算法了，哈哈哈！</p>
@@ -390,7 +390,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍问题"><span class="toc-number">1.</span> <span class="toc-text">打家劫舍问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍2"><span class="toc-number">2.</span> <span class="toc-text">打家劫舍2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">2.0.1.</span> <span class="toc-text">题目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍-3-（二叉树）"><span class="toc-number">3.</span> <span class="toc-text">打家劫舍 3 （二叉树）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法一：递归实现-重复子问题，先找到最小规模的问题，就是最优子结构；"><span class="toc-number">3.0.2.</span> <span class="toc-text">解法一：递归实现,重复子问题，先找到最小规模的问题，就是最优子结构；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#问题的目标就是在这棵二叉树能偷到最多的钱。"><span class="toc-number">3.0.2.0.1.</span> <span class="toc-text">问题的目标就是在这棵二叉树能偷到最多的钱。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法2：使用DP-table-备忘录"><span class="toc-number">3.0.3.</span> <span class="toc-text">解法2：使用DP table-备忘录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法三"><span class="toc-number">3.1.</span> <span class="toc-text">解法三</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍问题"><span class="toc-number">1.</span> <span class="toc-text">打家劫舍问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目描述"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目描述</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍2"><span class="toc-number">2.</span> <span class="toc-text">打家劫舍2</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目"><span class="toc-number">2.0.1.</span> <span class="toc-text">题目</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#打家劫舍-3-（二叉树）"><span class="toc-number">3.</span> <span class="toc-text">打家劫舍 3 （二叉树）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#题目-1"><span class="toc-number">3.0.1.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#解法一：递归实现-重复子问题，先找到最小规模的问题，就是最优子结构；"><span class="toc-number">3.0.2.</span> <span class="toc-text">解法一：递归实现,重复子问题，先找到最小规模的问题，就是最优子结构；</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#问题的目标就是在这棵二叉树能偷到最多的钱。"><span class="toc-number">3.0.2.0.1.</span> <span class="toc-text">问题的目标就是在这棵二叉树能偷到最多的钱。</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#java-解法"><span class="toc-number">3.0.3.</span> <span class="toc-text">java 解法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#解法二"><span class="toc-number">3.1.</span> <span class="toc-text">解法二</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -583,6 +583,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">中等</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFS</a>
               </li>
              
@@ -591,15 +603,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法</a>
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">中等</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hash</a>
+                <a href="javascript:void(0)" class="js-tag color4">回溯法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,15 +623,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">回溯法</a>
+                <a href="javascript:void(0)" class="js-tag color4">Array && ArrayList</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -647,15 +655,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
+                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -671,23 +675,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快慢指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -699,7 +687,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">快慢指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">简单</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
             
             <div class="clearfix"></div>
