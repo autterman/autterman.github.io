@@ -6,23 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>leet_code_658.找到K个最接近的元素 | Autter</title>
+  <title>Archives: 2020/6 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="leet_code_658.找到K个最接近的元素题目给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。">
-<meta name="keywords" content="二分法的最优区间的边界问题,双指针法">
-<meta property="og:type" content="article">
-<meta property="og:title" content="leet_code_658.找到K个最接近的元素">
-<meta property="og:url" content="http://www.autterman.cn/2019/10/24/leet-code-658-找到K个最接近的元素/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Autter">
+<meta property="og:url" content="http://www.autterman.cn/archives/2020/06/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="leet_code_658.找到K个最接近的元素题目给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。">
 <meta property="og:locale" content="en">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:image" content="https://img-blog.csdnimg.cn/20191024143502541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2019-10-24T07:12:39.291Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="leet_code_658.找到K个最接近的元素">
-<meta name="twitter:description" content="leet_code_658.找到K个最接近的元素题目给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。">
-<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
+<meta name="twitter:title" content="Autter">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -168,280 +160,68 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-leet-code-658-找到K个最接近的元素" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
+            
+  
+  
     
-      <header class="article-header">
-        
-        
-        <a href="/2019/10/24/leet-code-658-找到K个最接近的元素/" class="archive-article-date >
-
-
-
-  	<time datetime="2019-10-24T06:57:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-24</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-           
-        <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-      
     
-          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-            <span class="icon-sort"></span>
-         
-            <span class="archive-article-date">
-                阅读量 <span id="busuanzi_value_page_pv"></span>
-            </span>
-          </a>
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="leet-code-658-找到K个最接近的元素"><a href="#leet-code-658-找到K个最接近的元素" class="headerlink" title="leet_code_658.找到K个最接近的元素"></a>leet_code_658.找到K个最接近的元素</h3><h5 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h5><p>给定一个排序好的数组，两个整数 k 和 x，从数组中找到最靠近 x（两数之差最小）的 k 个数。返回的结果必须要是按升序排好的。如果有两个数与 x 的差值一样，优先选择数值较小的那个数。</p>
-<a id="more"></a> 
-<p><img src="https://img-blog.csdnimg.cn/20191024143425155.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><img src="https://img-blog.csdnimg.cn/20191024143502541.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>方法一：删除法<br>从两端遍历数组，比较头尾数组元素与 x 的距离，哪端距离大，哪端数组出栈，直到出栈后的数组长度为k 。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment">#删除法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findClosestElements</span><span class="params">(self,arr, k, x)</span>:</span></span><br><span class="line">    <span class="keyword">if</span> k == len(arr):</span><br><span class="line">    	<span class="keyword">return</span> arr</span><br><span class="line">    res = []</span><br><span class="line">    <span class="keyword">while</span> len(arr) != k:</span><br><span class="line">    	ldistance = abs(arr[<span class="number">0</span>] - x)</span><br><span class="line">    	rdistance = abs(arr[<span class="number">-1</span>] -x)</span><br><span class="line">    	<span class="keyword">if</span> ldistance &gt; rdistance:</span><br><span class="line">    		arr.pop(<span class="number">0</span>)</span><br><span class="line">    	<span class="keyword">else</span> :</span><br><span class="line">    		arr.pop(<span class="number">-1</span>)</span><br><span class="line">    <span class="keyword">return</span> arr</span><br></pre></td></tr></table></figure>
-
-<p>方法二：二分法查找最优区间的左边界<br>分析：如果mid 是左边界，则当前区间覆盖的范围是 [mid, mid + k -1]. 如果发现 a[mid] 与 x 距离比 a[mid + k] 与 x 的距离要大，说明解一定在右侧。</p>
-<h6 id="python"><a href="#python" class="headerlink" title="python"></a>python</h6><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="comment">#删除法</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">findClosestElements</span><span class="params">(self,arr, k, x)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> k == len(arr):</span><br><span class="line">            <span class="keyword">return</span> arr</span><br><span class="line">        left ,right = <span class="number">0</span>,len(arr) -k</span><br><span class="line">        <span class="keyword">while</span> left &lt; right :</span><br><span class="line">            mid = (left + right) &gt;&gt;<span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> abs(arr[mid] - x) &gt; abs(arr[mid + k] -x):  <span class="comment"># x 靠近区间右端，区间右移</span></span><br><span class="line">                left = mid + <span class="number">1</span> </span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                right = mid </span><br><span class="line">        <span class="keyword">return</span> arr[left:left+k]</span><br></pre></td></tr></table></figure>
-
-
       
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就收藏噻<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
         </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2020/06/15/Java的HashMap底层实现原理（jdk1.8）/" class="archive-article-date >
+
+
+
+  	<time datetime="2020-06-15T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-15</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/06/15/Java的HashMap底层实现原理（jdk1.8）/">HashMap</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">二分法的最优区间的边界问题</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">HashMap</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">双指针法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HashTable</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2019/10/24/leet-code-658-找到K个最接近的元素/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2019/10/28/leetcode_436-寻找右区间/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          436.寻找右区间
-        
-      </div>
-    </a>
   
   
-    <a href="/2019/10/23/leetcode-300-最长子序列问题/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">leetcode_300_最长子序列问题</div>
-      <i class="icon-circle-right"></i>
-    </a>
+    </div></section>
   
-</nav>
 
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#leet-code-658-找到K个最接近的元素"><span class="toc-number">1.</span> <span class="toc-text">leet_code_658.找到K个最接近的元素</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#题目"><span class="toc-number">1.0.1.</span> <span class="toc-text">题目</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#python"><span class="toc-number">1.0.1.1.</span> <span class="toc-text">python</span></a></li></ol></li></ol></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-      <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
     
 
-  
-  
-  
-
-  
-
-  
-
-  
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
 
           </div>
         </div>
@@ -496,8 +276,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
-		isArchive: false,
+		isPost: false,
+		isArchive: true,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
