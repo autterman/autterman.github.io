@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>java 基础 | Autter</title>
+  <title>Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3.== 与 equals 的区别？4.Array 与 ArrayList的区别，以及各自的使用场景？">
-<meta name="keywords" content="StringBulider&amp;StringBuffer,final&amp;finally&amp;finallized,==&amp;equals,Array &amp;&amp; ArrayList">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java 基础">
-<meta property="og:url" content="http://www.autterman.cn/2020/04/25/Java基础/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Autter">
+<meta property="og:url" content="http://www.autterman.cn/2020/06/19/新建文本文档/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3.== 与 equals 的区别？4.Array 与 ArrayList的区别，以及各自的使用场景？">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2020-06-05T15:23:43.063Z">
+<meta property="og:updated_time" content="2020-06-19T07:37:58.634Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java 基础">
-<meta name="twitter:description" content="1.String,StringBulider,StringBuffer的区别？2.final,finally,finallized的区别？3.== 与 equals 的区别？4.Array 与 ArrayList的区别，以及各自的使用场景？">
+<meta name="twitter:title" content="Autter">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -165,162 +161,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Java基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-新建文本文档" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
     
-      <header class="article-header">
-        
-        
-        <a href="/2020/04/25/Java基础/" class="archive-article-date >
-
-
-
-  	<time datetime="2020-04-25T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-           
-        <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-      
-    
-          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
-            <span class="icon-sort"></span>
-         
-            <span class="archive-article-date">
-                阅读量 <span id="busuanzi_value_page_pv"></span>
-            </span>
-          </a>
-        
-        
-
-      </header>
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-String-StringBulider-StringBuffer的区别？"><a href="#1-String-StringBulider-StringBuffer的区别？" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h5><h5 id="2-final-finally-finallized的区别？"><a href="#2-final-finally-finallized的区别？" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h5><h5 id="3-与-equals-的区别？"><a href="#3-与-equals-的区别？" class="headerlink" title="3.== 与 equals 的区别？"></a>3.== 与 equals 的区别？</h5><h5 id="4-Array-与-ArrayList的区别，以及各自的使用场景？"><a href="#4-Array-与-ArrayList的区别，以及各自的使用场景？" class="headerlink" title="4.Array 与 ArrayList的区别，以及各自的使用场景？"></a>4.Array 与 ArrayList的区别，以及各自的使用场景？</h5><a id="more"></a> 
-<h6 id="1-String-StringBulider-StringBuffer的区别？-1"><a href="#1-String-StringBulider-StringBuffer的区别？-1" class="headerlink" title="1.String,StringBulider,StringBuffer的区别？"></a>1.String,StringBulider,StringBuffer的区别？</h6><p>可从两个方面说：线程安全和速度。<br>1.1 首先说运行速度： StringBuilder &gt; StringBuffer &gt; String<br>    String最慢的原因：String为字符串常量，而StringBuilder和StringBuffer均为字符串变量，<br>    String对象一旦创建之后该对象是不可更改的，但后两者的对象是变量，是可以更改的。<br>    以下面一段代码为例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">"abc"</span>;</span><br><span class="line">System.out.println(str);</span><br><span class="line">str=str+<span class="string">"de"</span>;</span><br><span class="line">System.out.println(str);</span><br></pre></td></tr></table></figure>
-
-<p>如果运行这段代码会发现先输出“abc”，然后又输出“abcde”，好像是str这个对象被更改了，其实，这只是一种假象罢了，JVM对于这几行代码是这样处理的，首先创建一个String对象str，并把“abc”赋值给str，然后在第三行中，其实JVM又创建了一个新的对象也名为str，然后再把原来的str的值和“de”加起来再赋值给新的str，而原来的str就会被JVM的垃圾回收机制（GC）给回收掉了，所以，str实际上并没有被更改，也就是前面说的String对象一旦创建之后就不可更改了。所以，Java中对String对象进行的操作实际上是一个不断创建新的对象并且将旧的对象回收的一个过程，所以执行速度很慢。</p>
-<p>而StringBuilder和StringBuffer的对象是变量，对变量进行操作就是直接对该对象进行更改，而不进行创建和回收的操作，所以速度要比String快很多。</p>
-<p>另外，有时候我们会这样对字符串进行赋</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String str=<span class="string">"abc"</span>+<span class="string">"de"</span>;</span><br><span class="line">StringBuilder stringBuilder=new StringBuilder().append(<span class="string">"abc"</span>).append(<span class="string">"de"</span>);</span><br><span class="line">System.out.println(str);</span><br><span class="line">System.out.println(stringBuilder.toString());</span><br></pre></td></tr></table></figure>
-
-<p>这样输出结果也是“abcde”和“abcde”，但是String的速度却比StringBuilder的反应速度要快很多，这是因为第1行中的操作和</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">　　String str=<span class="string">"abcde"</span>;</span><br><span class="line"></span><br><span class="line">　　是完全一样的，所以会很快，而如果写成下面这种形式</span><br><span class="line"><span class="number">1</span> String str1=<span class="string">"abc"</span>;</span><br><span class="line"><span class="number">2</span> String str2=<span class="string">"de"</span>;</span><br><span class="line"><span class="number">3</span> String str=str1+str2;</span><br></pre></td></tr></table></figure>
-
-<p>那么JVM就会像上面说的那样，不断的创建、回收对象来进行这个操作了。速度就会很慢。</p>
-<ol start="2">
-<li>再说线程安全问题<br>在线程安全上，StringBuilder是线程不安全的，而StringBuffer是线程安全的</li>
-</ol>
-<p>　　如果一个StringBuffer对象在字符串缓冲区被多个线程使用时，StringBuffer中很多方法可以带有synchronized关键字，所以可以保证线程是安全的，但StringBuilder的方法则没有该关键字，所以不能保证线程安全，有可能会出现一些错误的操作。所以如果要进行的操作是多线程的，那么就要使用StringBuffer，但是在单线程的情况下，还是建议使用速度比较快的StringBuilder。</p>
-<ol start="3">
-<li>总结一下<br>　　String：适用于少量的字符串操作的情况</li>
-</ol>
-<p>　　StringBuilder：适用于单线程下在字符缓冲区进行大量操作的情况</p>
-<p>　　StringBuffer：适用多线程下在字符缓冲区进行大量操作的情况</p>
-<h6 id="2-final-finally-finallized的区别？-1"><a href="#2-final-finally-finallized的区别？-1" class="headerlink" title="2.final,finally,finallized的区别？"></a>2.final,finally,finallized的区别？</h6><ol>
-<li><p>final修饰符（关键字）。被final修饰的类，就意味着不能再派生出新的子类，不能作为父类而被子类继承。<br>因此一个类不能既被abstract声明，又被final声明。将变量或方法声明为final，可以保证他们在使用的过程中不被修改。<br>被声明为final的变量必须在声明时给出变量的初始值，而在以后的引用中只能读取。被final声明的方法也同样只能使用，即不能方法重写。<br>从final 修饰的类、变量、方法三者的表现说。</p>
-</li>
-<li><p>finally(流氓模块)是在异常处理时提供finally块来执行任何清除操作。不管有没有异常被抛出、捕获，finally块都会被执行。<br>try块中的内容是在无异常时执行到结束。catch块中的内容，是在try块内容发生catch所声明的异常时，跳转到catch块中执行。<br>finally块则是无论异常是否发生，都会执行finally块的内容，所以在代码逻辑中有需要无论发生什么都必须执行的代码，就可以放在finally块中。</p>
-</li>
-<li><p>finalize是方法名。java技术允许使用finalize（）方法在垃圾收集器将对象从内存中清除出去之前做必要的清理工作。这个方法是由垃圾收集器在确定这个对象没有被引用时对这个对象调用的。它是在object类中定义的，因此所有的类都继承了它。子类覆盖finalized()方法以整理系统资源或者被执行其他清理工作。<br>finalize()方法是在垃圾收集器删除对象之前对这个对象调用的。</p>
-<h6 id="3-与-equals-的区别？-1"><a href="#3-与-equals-的区别？-1" class="headerlink" title="3.== 与 equals 的区别？"></a>3.== 与 equals 的区别？</h6><p>一、先说 “==” 对比情况分两种，对象对比、基本类型的对比。<br>比较的是变量(栈)内存中存放的对象的(堆)内存地址，用来判断两个对象的地址是否相同，即是否是指相同一个对象。比较的是真正意义上的指针操作。<br>首先说对象的比较    变量（栈）内存中存放的对象的（堆）内存地址，用来判断两个对象的地址是否相同，即是否是指相同的一个对象。比较的是真正意义上的指针操作。</p>
-</li>
-<li><p>比较的是操作符两端的操作数是否是同一个对象。</p>
-</li>
-<li><p>两边的操作数必须是同一类型的（可以是父子类之间）才能编译通过。</p>
-</li>
-<li><p>比较的地址，如果是具体数据类型之间的比较String s1 = “abc”, s2 = “abc”;  Syetem.out.print(s1 = s2);打印为true,因为他们都是指向同一个地址，内容为’abc’。</p>
-</li>
-</ol>
-<p>二、equals 方法比较</p>
-<p>由于所有的类都是继承自java.lang.Object类的，所以适用于所有对象，如果没有对该方法进行覆盖的话，调用的仍然是Object类中的方法，由equals的源码可以看出这里定义的equals与==是等效的（Object类中的equals没什么区别），不同的原因就在于有些类（像String、Integer等类）对equals进行了重写，但是没有对equals进行重写的类（比如我们自己写的类）就只能从Object类中继承equals方法，其equals方法与==就也是等效的，除非我们在此类中重写equals。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span> </span>&#123;</span><br><span class="line">   	<span class="keyword">return</span> (<span class="keyword">this</span> == obj);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>　对equals重新需要注意五点：</p>
-<p>　　1   自反性：对任意引用值X，x.equals(x)的返回值一定为true；<br>　　2   对称性：对于任何引用值x,y,当且仅当y.equals(x)返回值为true时，x.equals(y)的返回值一定为true；<br>　　3   传递性：如果x.equals(y)=true, y.equals(z)=true,则x.equals(z)=true ；<br>　　4   一致性：如果参与比较的对象没任何改变，则对象比较的结果也不应该有任何改变；<br>　　5   非空性：任何非空的引用值X，x.equals(null)的返回值一定为false 。</p>
-<p>运行速度： == 比 equals 速度快，因为 == 比较的对象的地址。</p>
-<p>总结来说：</p>
-<p>　　1）对于==，如果是用于基本数据类型的变量的比较，是比较“值”是否相等；<br>　　　　如果比较对象，则比较是栈内存地址<br>　　2）对于equals方法，注意：equals方法不能作用于基本数据类型的变量<br>　　　　如果没有对equals方法进行重写，也就是使用Object类里的equals方法，则比较的是对象的内存地址；<br>　　　　若String、Date等类对equals方法进行了重写的话，比较的是所指向的对象的内容。</p>
-<h6 id="一-Array-与-ArrayList-的区别，以及应用场景的不同之处"><a href="#一-Array-与-ArrayList-的区别，以及应用场景的不同之处" class="headerlink" title="一. Array 与 ArrayList 的区别，以及应用场景的不同之处"></a>一. Array 与 ArrayList 的区别，以及应用场景的不同之处</h6><p>ArrayList 可以理解为能够自动扩容的 array ，也就是两者的第一个区别：<br><strong>1. 存储空间大小的区别</strong> </p>
-<ul>
-<li><p>Array 的空间大小是固定的，空间不够时也不能再次申请，所以需要使用之前确定合适的空间大小。</p>
-</li>
-<li><p>ArrayList 的空间是可以动态增长的，当空间不够时，ArrayList 的底层会生成一个新的数组，长度为原数组的 1.5 倍 + 1 ，也就是源码中 newLength = oldarrayLength + (oldarrayLengt &gt;&gt; 1)  + 1 。</p>
-<h4 id="2-存储内容的比较："><a href="#2-存储内容的比较：" class="headerlink" title="2. 存储内容的比较："></a><strong>2. 存储内容的比较：</strong></h4></li>
-<li><p>Array 数组可以包含基本类型和对象类型，而且存放是的时候一定是同种类型的元素（除非类型是 Object ），</p>
-</li>
-<li><p>如 <strong><em>String [] list ={“a”，”b”}</em></strong><br>那么此数组只能存储 String 类型的，而 ArrayList 存放的是对象类型，所以可以存储 Object，可以有所区别。</p>
-</li>
-<li><p>ArrayList 数组 只能存放对象类型，比如<br> <strong><em>ArrayList<integer> list = new ArratList&lt;&gt;();</integer></em></strong></p>
-<h4 id="3-使用方法方面的比较"><a href="#3-使用方法方面的比较" class="headerlink" title="3.使用方法方面的比较"></a><strong>3.使用方法方面的比较</strong></h4></li>
-<li><p>ArrayList 是Array 的增强版，但是是有所取舍的增强，基本上 Array 的方法 ArrayList 也能用，继而增加了 addAll(),removeAll(),返回迭代器 iteratorAll（）等，Array 是没有的。</p>
-<h4 id="4-效率方面的"><a href="#4-效率方面的" class="headerlink" title="4.效率方面的"></a>4.效率方面的</h4></li>
-<li><p>Array &gt; Arraylist ,原因自然在于 ArrayList 的动态扩容造成的效率损耗。</p>
-</li>
-<li><p>二者在内存中都是连续存储的，所以通过索引查找元素的速度都非常快，赋值元素也比较简单。</p>
-</li>
-<li><p>但是，数组在插入/删除数据是很麻烦的，因为插入数据后，数组的其他元素要进行相对位置的移动，时间复杂度就是O（n）,而LinkedList 是O（1）。</p>
-<h4 id="5-使用场景"><a href="#5-使用场景" class="headerlink" title="5.使用场景"></a>5.使用场景</h4></li>
-<li><p>如果想保存一些在整个程序 运行期间都会存在而且不变的数据，我们就可以适应 Array<br>，但是如果我们单纯只是想要以数组的形式保存数据，而不对数据及逆行增加等操作（因为插入删除元素，ArrayList 的效率并不高 O（n),此处考虑选用LinkedList），只是方便查找的话，我们可以用 ArrayList。</p>
-</li>
-</ul>
-<h6 id="6-Array-与-ArrayList-的相互转化"><a href="#6-Array-与-ArrayList-的相互转化" class="headerlink" title="6.Array 与 ArrayList 的相互转化"></a>6.Array 与 ArrayList 的相互转化</h6><p>Array  —&gt; ArrayList </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String [] list = &#123;<span class="string">"a"</span>,<span class="string">"b"</span>&#125;;</span><br><span class="line">List alist = Arrays.asList(list);</span><br></pre></td></tr></table></figure>
-
-<p>ArrayList –&gt; Array </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">List list=<span class="keyword">new</span> ArrayList();  </span><br><span class="line">        list.add(<span class="string">"a"</span>);  </span><br><span class="line">        list.add(<span class="string">"b"</span>);  </span><br><span class="line">        list.add(<span class="string">"c"</span>);  </span><br><span class="line">        <span class="keyword">int</span> len=list.size();  </span><br><span class="line">        String[] array = (String[])list.toArray(<span class="keyword">new</span> String[len]);  </span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;array.length;i++)&#123;  </span><br><span class="line">            System.out.println(array[i]);  </span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<p>注 ：Array 的对象类型是 Obect 时，类型可不同</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object [] list = <span class="keyword">new</span> Object[<span class="number">5</span>];</span><br><span class="line">list[<span class="number">0</span>] = <span class="keyword">new</span> Animal();</span><br><span class="line">arr[<span class="number">1</span>] = <span class="number">2</span>;</span><br><span class="line">arr[<span class="number">2</span>] = <span class="string">"ok?"</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>增加 List 相关知识点</strong> </p>
-<ul>
-<li>List 是一个有序的集合，可以包含重复的元素，提供了按索引访问的方式，继承自 Collection 。</li>
-<li>List 是一个接口，ArrayList 是一个类，ListArray 继承并实现了 List， List 是不能被构造，但可以为 List 创建一个引用，而 ListArray 可以被构造，举例如下：</li>
-</ul>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> List list = <span class="keyword">new</span> List(); <span class="comment">//错误的用法</span></span><br><span class="line"> List list; <span class="comment">//只是构建引用，list = null，正确用法</span></span><br><span class="line"> List list = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="comment">/**构建了一个ArrayList 对象后上溯到了List。</span></span><br><span class="line"><span class="comment">此时它是一个List 对象了，</span></span><br><span class="line"><span class="comment">有些ArrayList 有的但是 List 没有的方法，它就不能使用了。</span></span><br><span class="line"><span class="comment">而 ArrayList list=new ArrayList();创建一对象则保留了ArrayList的所有属性。</span></span><br><span class="line"><span class="comment">**/</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="二-ArrayList-与-LinkedList-的区别，以及应用场景的不同"><a href="#二-ArrayList-与-LinkedList-的区别，以及应用场景的不同" class="headerlink" title="二 .ArrayList 与 LinkedList 的区别，以及应用场景的不同"></a>二 .ArrayList 与 LinkedList 的区别，以及应用场景的不同</h4><ul>
-<li><p>ArrayList 和 LinkedList 都是实现了 List<br>的接口，用于存储一系列的对象引用，都可以对元素的增删改查进行操作。</p>
-</li>
-<li><p>对于 ArrayList<br>它在集合的末尾删除和添加元素的所用时间是一样的，但是在列表中间添加或删除元素所用时间就会大大增加，但是根据索引查找元素的时候速度很快。</p>
-</li>
-<li><p>对于 LinkedList 则相反，它在插入删除集合中任何位置的元素的所花费的时间是一样的，但是它根据索引查询一个元素的时候却比较慢。</p>
-<h5 id="ArrayList-与-LinkedList-二者的区别"><a href="#ArrayList-与-LinkedList-二者的区别" class="headerlink" title="ArrayList 与 LinkedList 二者的区别"></a>ArrayList 与 LinkedList 二者的区别</h5><ol>
-<li>构成结构的不同<br>ArrayList 基于动态数据的数据结构，而 LinkedList 是基于链表结构。</li>
-<li>对于随机访问 get 和 set 方法，ArrayList 是优于 LinkedList，因为LinkedList 要移动指针。</li>
-<li>对于新增/删除数据add /remove，优先选择 LinkedList,因为 ArrayList 操作后要移动数据。<h5 id="性能上的缺点"><a href="#性能上的缺点" class="headerlink" title="性能上的缺点"></a>性能上的缺点</h5></li>
-<li>对ArrayList和LinkedList而言，在列表末尾增加一个元素所花的开销都是固定的。对 ArrayList而言，主要是在内部数组中增加一项，指向所添加的元素，偶尔可能会导致对数组重新进行分配；而对LinkedList而言，这个开销是 统一的，分配一个内部Entry对象。</li>
-<li>在ArrayList集合中添加或者删除一个元素时，当前的列表所所有的元素都会被移动。而LinkedList集合中添加或者删除一个元素的开销是固定的。</li>
-<li>LinkedList集合不支持 高效的随机随机访问（RandomAccess），因为可能产生二次项的行为。</li>
-<li>ArrayList的空间浪费主要体现在在list列表的结尾预留一定的容量空间，而LinkedList的空间花费则体现在它的每一个元素都需要消耗相当的空间</li>
-</ol>
-</li>
-</ul>
-<p>   <a href="https://blog.csdn.net/qq_32679815/article/details/78907437?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-1.nonecase" target="_blank" rel="noopener">参考文章</a></p>
-
+        
       
 
       
@@ -349,29 +197,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">StringBulider&StringBuffer</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">final&finally&finallized</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">==&equals</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Array && ArrayList</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -422,7 +247,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/04/25/Java基础/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/06/19/新建文本文档/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -436,18 +261,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/05/18/leetcode_152. 乘积最大子数组/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/25/leetcode_139. 单词拆分(dp + dfs + 记忆化 dfs )/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          152.乘积最大子数组
+          139. 单词拆分
         
       </div>
     </a>
   
   
-    <a href="/2020/04/21/剑指offer-链表-寻找链表的环的入口/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">剑指Offer-链表-寻找链表环的入口</div>
+    <a href="/2020/06/15/Java的HashMap底层实现原理（jdk1.8）/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HashMap</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -474,7 +299,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？"><span class="toc-number">1.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-final-finally-finallized的区别？"><span class="toc-number">2.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-与-equals-的区别？"><span class="toc-number">3.</span> <span class="toc-text">3.== 与 equals 的区别？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-Array-与-ArrayList的区别，以及各自的使用场景？"><span class="toc-number">4.</span> <span class="toc-text">4.Array 与 ArrayList的区别，以及各自的使用场景？</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#1-String-StringBulider-StringBuffer的区别？-1"><span class="toc-number">4.1.</span> <span class="toc-text">1.String,StringBulider,StringBuffer的区别？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#2-final-finally-finallized的区别？-1"><span class="toc-number">4.2.</span> <span class="toc-text">2.final,finally,finallized的区别？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#3-与-equals-的区别？-1"><span class="toc-number">4.3.</span> <span class="toc-text">3.== 与 equals 的区别？</span></a></li><li class="toc-item toc-level-6"><a class="toc-link" href="#一-Array-与-ArrayList-的区别，以及应用场景的不同之处"><span class="toc-number">4.4.</span> <span class="toc-text">一. Array 与 ArrayList 的区别，以及应用场景的不同之处</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-存储内容的比较："><span class="toc-number"></span> <span class="toc-text">2. 存储内容的比较：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-使用方法方面的比较"><span class="toc-number"></span> <span class="toc-text">3.使用方法方面的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-效率方面的"><span class="toc-number"></span> <span class="toc-text">4.效率方面的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-使用场景"><span class="toc-number"></span> <span class="toc-text">5.使用场景</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#6-Array-与-ArrayList-的相互转化"><span class="toc-number">0.1.</span> <span class="toc-text">6.Array 与 ArrayList 的相互转化</span></a></li></ol></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二-ArrayList-与-LinkedList-的区别，以及应用场景的不同"><span class="toc-number"></span> <span class="toc-text">二 .ArrayList 与 LinkedList 的区别，以及应用场景的不同</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#ArrayList-与-LinkedList-二者的区别"><span class="toc-number">1.</span> <span class="toc-text">ArrayList 与 LinkedList 二者的区别</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#性能上的缺点"><span class="toc-number">2.</span> <span class="toc-text">性能上的缺点</span></a></li></ol>
+                    目录，不存在的…
                     </div>
                 </span>
             </div>
