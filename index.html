@@ -162,6 +162,324 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hadoop 优化的一些方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2020/06/29/Hadoop 优化的一些方法/" class="archive-article-date >
+
+
+
+  	<time datetime="2020-06-29T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce优化！"><a href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce优化！" class="headerlink" title="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce优化！"></a>Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce优化！</h2><h4 id="第一个-offer-快到碗里来-！"><a href="#第一个-offer-快到碗里来-！" class="headerlink" title="第一个 offer 快到碗里来 ！"></a>第一个 offer 快到碗里来 ！</h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">MapReduce优化</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/29/Hadoop 优化的一些方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-Hadoop总结之MR" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2020/06/29/Hadoop总结之MR/" class="archive-article-date >
+
+
+
+  	<time datetime="2020-06-29T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce！"><a href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce！" class="headerlink" title="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce！"></a>Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之MapReduce！</h2><h4 id="为第一个-offer-而战！"><a href="#为第一个-offer-而战！" class="headerlink" title="为第一个 offer 而战！"></a>为第一个 offer 而战！</h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">MapReduce</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/29/Hadoop总结之MR/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
+    <article id="post-Hadoop总结以及一些面试问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
+    
+      <header class="article-header">
+        
+        
+        <a href="/2020/06/29/Hadoop总结以及一些面试问题/" class="archive-article-date >
+
+
+
+  	<time datetime="2020-06-29T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-29</time>
+</a>
+        <!--显示阅读次数-->
+        
+        
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"><a href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！" class="headerlink" title="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"></a>Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！</h2><h4 id="为第一个-offer-而战！"><a href="#为第一个-offer-而战！" class="headerlink" title="为第一个 offer 而战！"></a>为第一个 offer 而战！</h4>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hdfs</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/29/Hadoop总结以及一些面试问题/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
+
+  
     <article id="post-leetcode_139. 单词拆分(dp + dfs + 记忆化 dfs )" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
@@ -376,7 +694,7 @@
   </section>
 
   
-    <article id="post-lc_5418. 二叉树中的伪回文路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-lc_5419. 两个子序列的最大点积" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -384,7 +702,7 @@
       <header class="article-header">
         
         
-        <a href="/2020/05/24/lc_5418. 二叉树中的伪回文路径/" class="archive-article-date >
+        <a href="/2020/05/24/lc_5419. 两个子序列的最大点积/" class="archive-article-date >
 
 
 
@@ -398,7 +716,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="5418-二叉树中的伪回文路径"><a href="#5418-二叉树中的伪回文路径" class="headerlink" title="5418. 二叉树中的伪回文路径"></a>5418. 二叉树中的伪回文路径</h4><p><strong>题目描述</strong><br>给你一棵二叉树，每个节点的值为 1 到 9 。我们称二叉树中的一条路径是 「伪回文」的，当它满足：路径经过的所有节点值的排列中，存在一个回文序列。<br>请你返回从根到叶子节点的所有路径中 伪回文 路径的数目。</p>
+        <h4 id="5419-两个子序列的最大点积"><a href="#5419-两个子序列的最大点积" class="headerlink" title="5419. 两个子序列的最大点积"></a>5419. 两个子序列的最大点积</h4><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><p>给你两个数组 nums1 和 nums2 。<br>请你返回 nums1 和 nums2 中两个长度相同的 非空 子序列的最大点积。<br>数组的非空子序列是通过删除原数组中某些元素（可能一个也不删除）后剩余数字组成的序列，但不能改变数字间相对顺序。比方说，[2,3,5] 是 [1,2,3,4,5] 的一个子序列而 [1,5,3] 不是。</p>
         
       
 
@@ -412,11 +730,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">回溯法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
         		</li>
       		
 		</ul>
@@ -426,7 +744,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/24/lc_5418. 二叉树中的伪回文路径/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/24/lc_5419. 两个子序列的最大点积/">展开全文 >></a>
         </p>
       
 
@@ -482,7 +800,7 @@
   </section>
 
   
-    <article id="post-lc_5419. 两个子序列的最大点积" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-lc_5418. 二叉树中的伪回文路径" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
 
 
@@ -490,7 +808,7 @@
       <header class="article-header">
         
         
-        <a href="/2020/05/24/lc_5419. 两个子序列的最大点积/" class="archive-article-date >
+        <a href="/2020/05/24/lc_5418. 二叉树中的伪回文路径/" class="archive-article-date >
 
 
 
@@ -504,7 +822,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="5419-两个子序列的最大点积"><a href="#5419-两个子序列的最大点积" class="headerlink" title="5419. 两个子序列的最大点积"></a>5419. 两个子序列的最大点积</h4><h5 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h5><p>给你两个数组 nums1 和 nums2 。<br>请你返回 nums1 和 nums2 中两个长度相同的 非空 子序列的最大点积。<br>数组的非空子序列是通过删除原数组中某些元素（可能一个也不删除）后剩余数字组成的序列，但不能改变数字间相对顺序。比方说，[2,3,5] 是 [1,2,3,4,5] 的一个子序列而 [1,5,3] 不是。</p>
+        <h4 id="5418-二叉树中的伪回文路径"><a href="#5418-二叉树中的伪回文路径" class="headerlink" title="5418. 二叉树中的伪回文路径"></a>5418. 二叉树中的伪回文路径</h4><p><strong>题目描述</strong><br>给你一棵二叉树，每个节点的值为 1 到 9 。我们称二叉树中的一条路径是 「伪回文」的，当它满足：路径经过的所有节点值的排列中，存在一个回文序列。<br>请你返回从根到叶子节点的所有路径中 伪回文 路径的数目。</p>
         
       
 
@@ -518,11 +836,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">中等</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">回溯法</a>
         		</li>
       		
 		</ul>
@@ -532,7 +850,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/24/lc_5419. 两个子序列的最大点积/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/24/lc_5418. 二叉树中的伪回文路径/">展开全文 >></a>
         </p>
       
 
@@ -914,321 +1232,6 @@
   </section>
 
   
-    <article id="post-4.8_阿里笔试试水" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-      <header class="article-header">
-        
-        
-        <a href="/2020/04/10/4.8_阿里笔试试水/" class="archive-article-date >
-
-
-
-  	<time datetime="2020-04-10T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="试水成功"><a href="#试水成功" class="headerlink" title="试水成功"></a>试水成功</h2><p><strong>水深水浅，一试便知！</strong><br>投简历来的第一次笔试，给了阿里，两道编程题，很凉很清爽！<br>虽然AC了个鹅蛋，但还是有收获的，知道了自己的水平，路漫漫，任重道远，熟悉在线编程的输入输出格式，刷题时，除了Python,也用Java写写，渐渐把java作为自己的主要语言。</p>
-<h4 id="编程题1："><a href="#编程题1：" class="headerlink" title="编程题1："></a>编程题1：</h4><p>训练游戏：你可以攻击n次，有m个小兵，每个小兵的血量为a,你的攻击范围是b（每次能打到b个小兵，当一次攻击结束，小兵血量为0，便被消灭）,计算训练结束后，你能灭掉几个小兵？</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">dp</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/10/4.8_阿里笔试试水/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-leetcode_石头游戏合集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-      <header class="article-header">
-        
-        
-        <a href="/2020/04/05/leetcode_石头游戏合集/" class="archive-article-date >
-
-
-
-  	<time datetime="2020-04-05T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="leetcode-石子游戏系列"><a href="#leetcode-石子游戏系列" class="headerlink" title="leetcode_石子游戏系列"></a>leetcode_石子游戏系列</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p><strong>石头游戏1</strong>：亚历克斯和李用几堆石子在做游戏。偶数堆石子排成一行，每堆都有正整数颗石子 piles[i] 。<br>游戏以谁手中的石子最多来决出胜负。石子的总数是奇数，所以没有平局。<br>亚历克斯和李轮流进行，亚历克斯先开始。 每回合，玩家从行的开始或结束处取走整堆石头。 这种情况一直持续到没有更多的石子堆为止，此时手中石子最多的玩家获胜。<br>假设亚历克斯和李都发挥出最佳水平，当亚历克斯赢得比赛时返回 true ，当李赢得比赛时返回 false 。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">DP</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">博弈论</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/05/leetcode_石头游戏合集/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
-    <article id="post-leetcode_289_生命游戏" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-
-
-    
-      <header class="article-header">
-        
-        
-        <a href="/2020/04/02/leetcode_289_生命游戏/" class="archive-article-date >
-
-
-
-  	<time datetime="2020-04-02T05:49:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        <!--显示阅读次数-->
-        
-        
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="leetcode-289-生命游戏"><a href="#leetcode-289-生命游戏" class="headerlink" title="leetcode_289.生命游戏"></a>leetcode_289.生命游戏</h2><h4 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h4><p>生命游戏，简称为生命，是英国数学家约翰·何顿·康威在 1970 年发明的细胞自动机。<br>给定一个包含 m × n 个格子的面板，每一个格子都可以看成是一个细胞。<br>每个细胞都具有一个初始状态：1 即为活细胞（live），或 0 即为死细胞（dead）。每个细胞与其八个相邻位置（水平，垂直，对角线）的细胞都遵循以下四条生存定律：<br>如果活细胞周围八个位置的活细胞数少于两个，则该位置活细胞死亡；<br>如果活细胞周围八个位置有两个或三个活细胞，则该位置活细胞仍然存活；<br>如果活细胞周围八个位置有超过三个活细胞，则该位置活细胞死亡；<br>如果死细胞周围正好有三个活细胞，则该位置死细胞复活；</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">矩阵上的格子问题</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/02/leetcode_289_生命游戏/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-
-<section id="comments" class="comments">
-  <style>
-    .comments{margin:30px;padding:10px;background:#fff}
-    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
-  </style>
-  <div id="vcomment" class="comment"></div> 
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-   var notify = 'false' == true ? true : false;
-   var verify = 'false' == true ? true : false;
-    window.onload = function() {
-        new Valine({
-            el: '.comment',
-            notify: notify,
-            verify: verify,
-            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
-            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
-            placeholder: "To be better !",
-            avatar:"mm"
-        });
-    }
-</script>
-  </section>
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1380,6 +1383,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hdfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">StringBulider&StringBuffer</a>
               </li>
              
@@ -1396,11 +1407,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">回溯法</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1412,27 +1419,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">DFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">回溯法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">双指针</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">栈</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1448,7 +1447,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">二分法的最优区间的边界问题</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双指针法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1456,11 +1463,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">递归</a>
+                <a href="javascript:void(0)" class="js-tag color4">矩阵上的格子问题</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1476,7 +1479,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
+                <a href="javascript:void(0)" class="js-tag color4">二叉树</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">递归</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1488,11 +1495,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">面试总结</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">手撕排序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">MapReduce优化</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
               </li>
             
             <div class="clearfix"></div>
