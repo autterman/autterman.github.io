@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://www.autterman.cn">
   <title>Hadoop 总结之 HDFS | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！为第一个 offer 而战！">
-<meta name="keywords" content="hdfs,面试">
+  <meta name="description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！准备收割！">
+<meta name="keywords" content="面试,hdfs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hadoop 总结之 HDFS">
 <meta property="og:url" content="http://www.autterman.cn/2020/06/29/Hadoop总结以及一些面试问题/index.html">
 <meta property="og:site_name" content="Autter">
-<meta property="og:description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！为第一个 offer 而战！">
+<meta property="og:description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！准备收割！">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200628162432887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200628171057342.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200628214911150.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200628232629779.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
 <meta property="og:image" content="https://img-blog.csdnimg.cn/20200629001515947.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-06-29T14:59:07.564Z">
+<meta property="og:updated_time" content="2020-07-10T05:28:53.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hadoop 总结之 HDFS">
-<meta name="twitter:description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！为第一个 offer 而战！">
+<meta name="twitter:description" content="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！准备收割！">
 <meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200628162432887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
@@ -223,7 +223,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"><a href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！" class="headerlink" title="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"></a>Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！</h2><h4 id="为第一个-offer-而战！"><a href="#为第一个-offer-而战！" class="headerlink" title="为第一个 offer 而战！"></a>为第一个 offer 而战！</h4><a id="more"></a> 
+        <h2 id="Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"><a href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！" class="headerlink" title="Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"></a>Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！</h2><h4 id="准备收割！"><a href="#准备收割！" class="headerlink" title="准备收割！"></a>准备收割！</h4><a id="more"></a> 
 <h4 id="1-Hadoop-1-x-和-Hadoop-2-x-的区别？"><a href="#1-Hadoop-1-x-和-Hadoop-2-x-的区别？" class="headerlink" title="1.Hadoop 1.x 和 Hadoop 2.x 的区别？"></a>1.Hadoop 1.x 和 Hadoop 2.x 的区别？</h4><p><img src="https://img-blog.csdnimg.cn/20200628162432887.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
 <h5 id="2-Hadoop-配置文件和Hadoop-集群搭建"><a href="#2-Hadoop-配置文件和Hadoop-集群搭建" class="headerlink" title="2.Hadoop 配置文件和Hadoop 集群搭建"></a>2.Hadoop 配置文件和Hadoop 集群搭建</h5><p>(1) 配置文件<br>   core-site.xml<br>   hdfs-site.xml<br>   mapre-site.xml<br>   yarn.site.xml<br>(2) 集群搭建过程<br>  JDK 安装<br>  配置 ssh 免密登陆<br>  配置hadoop 核心文件<br>  格式化 namenode  bin/hdfs name - format</p>
 <h5 id="3-NN，DN，SN的作用与联系？"><a href="#3-NN，DN，SN的作用与联系？" class="headerlink" title="3.NN，DN，SN的作用与联系？"></a>3.NN，DN，SN的作用与联系？</h5><ol>
@@ -309,11 +309,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hdfs</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hdfs</a>
         		</li>
       		
 		</ul>
@@ -421,7 +421,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"><span class="toc-number">1.</span> <span class="toc-text">Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为第一个-offer-而战！"><span class="toc-number">1.0.1.</span> <span class="toc-text">为第一个 offer 而战！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Hadoop-1-x-和-Hadoop-2-x-的区别？"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.Hadoop 1.x 和 Hadoop 2.x 的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Hadoop-配置文件和Hadoop-集群搭建"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">2.Hadoop 配置文件和Hadoop 集群搭建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-NN，DN，SN的作用与联系？"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">3.NN，DN，SN的作用与联系？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-NameNode-工作机制"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">4 .NameNode 工作机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-手写-MR-Spark-wordcount-案例"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">5.手写 MR/Spark wordcount 案例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-Hadoop-几个默认的端口和含义？或则说-几个-web-端口的含义？"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">6.Hadoop 几个默认的端口和含义？或则说 几个 web 端口的含义？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-HDFS-文件块大小"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">7.HDFS 文件块大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-HDFS-写数据流程"><span class="toc-number">1.0.2.7.</span> <span class="toc-text">8.HDFS 写数据流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-hdfs-读数据流程"><span class="toc-number">1.0.2.8.</span> <span class="toc-text">9.hdfs 读数据流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-集群安全模式"><span class="toc-number">1.0.2.9.</span> <span class="toc-text">10.集群安全模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-DataNode-工作机制"><span class="toc-number">1.0.2.10.</span> <span class="toc-text">10.DataNode 工作机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-如何解决-hdfs-存储小文件的弊端"><span class="toc-number">1.0.2.11.</span> <span class="toc-text">11.如何解决 hdfs 存储小文件的弊端</span></a></li></ol></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hadoop-的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！"><span class="toc-number">1.</span> <span class="toc-text">Hadoop 的学习正式告一段落，开启下一阶段之前，先做一个简单的总结之HDFS！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#准备收割！"><span class="toc-number">1.0.1.</span> <span class="toc-text">准备收割！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Hadoop-1-x-和-Hadoop-2-x-的区别？"><span class="toc-number">1.0.2.</span> <span class="toc-text">1.Hadoop 1.x 和 Hadoop 2.x 的区别？</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#2-Hadoop-配置文件和Hadoop-集群搭建"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">2.Hadoop 配置文件和Hadoop 集群搭建</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#3-NN，DN，SN的作用与联系？"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">3.NN，DN，SN的作用与联系？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#4-NameNode-工作机制"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">4 .NameNode 工作机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#5-手写-MR-Spark-wordcount-案例"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">5.手写 MR/Spark wordcount 案例</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#6-Hadoop-几个默认的端口和含义？或则说-几个-web-端口的含义？"><span class="toc-number">1.0.2.5.</span> <span class="toc-text">6.Hadoop 几个默认的端口和含义？或则说 几个 web 端口的含义？</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#7-HDFS-文件块大小"><span class="toc-number">1.0.2.6.</span> <span class="toc-text">7.HDFS 文件块大小</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#8-HDFS-写数据流程"><span class="toc-number">1.0.2.7.</span> <span class="toc-text">8.HDFS 写数据流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#9-hdfs-读数据流程"><span class="toc-number">1.0.2.8.</span> <span class="toc-text">9.hdfs 读数据流程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-集群安全模式"><span class="toc-number">1.0.2.9.</span> <span class="toc-text">10.集群安全模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#10-DataNode-工作机制"><span class="toc-number">1.0.2.10.</span> <span class="toc-text">10.DataNode 工作机制</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#11-如何解决-hdfs-存储小文件的弊端"><span class="toc-number">1.0.2.11.</span> <span class="toc-text">11.如何解决 hdfs 存储小文件的弊端</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -614,14 +614,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">二分法</a>
               </li>
              
@@ -634,11 +626,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hdfs</a>
+                <a href="javascript:void(0)" class="js-tag color2">MapReduce优化</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hdfs</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">dp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -658,7 +666,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">DP</a>
+                <a href="javascript:void(0)" class="js-tag color5">Zookeeper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,27 +686,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+                <a href="javascript:void(0)" class="js-tag color3">DP</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">-DP -二分查找</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">记忆化回溯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -710,7 +702,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
+                <a href="javascript:void(0)" class="js-tag color4">双指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">栈</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">字符串</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">迭代器</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">记忆化回溯</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -718,15 +726,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">快慢指针</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">链表</a>
+                <a href="javascript:void(0)" class="js-tag color3">矩阵</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -738,15 +738,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">博弈论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">-二分查找</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">简单</a>
+                <a href="javascript:void(0)" class="js-tag color5">笔试编程</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
+                <a href="javascript:void(0)" class="js-tag color5">快慢指针</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">链表</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -758,11 +766,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">MapReduce优化</a>
+                <a href="javascript:void(0)" class="js-tag color3">简单</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">MapReduce</a>
+                <a href="javascript:void(0)" class="js-tag color4">-DP</a>
               </li>
             
             <div class="clearfix"></div>
