@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://www.autterman.cn">
-  <title>Tag: -DP | Autter</title>
+  <title>SparkSQL 的三种 Join实现 | Autter</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Autter">
-<meta property="og:url" content="http://www.autterman.cn/tags/DP/index.html">
+  <meta name="description" content="得 Join 者的天下！来学学SparkSQL join 的三种实现方式！">
+<meta name="keywords" content="SparkSQL join">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SparkSQL 的三种 Join实现">
+<meta property="og:url" content="http://www.autterman.cn/2020/08/26/Spark join 的三种实现方式/index.html">
 <meta property="og:site_name" content="Autter">
+<meta property="og:description" content="得 Join 者的天下！来学学SparkSQL join 的三种实现方式！">
 <meta property="og:locale" content="en">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827001347992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20200827091833817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70#pic_center">
+<meta property="og:updated_time" content="2020-08-27T02:15:47.097Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Autter">
+<meta name="twitter:title" content="SparkSQL 的三种 Join实现">
+<meta name="twitter:description" content="得 Join 者的天下！来学学SparkSQL join 的三种实现方式！">
+<meta name="twitter:image" content="https://img-blog.csdnimg.cn/20200827001347992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70#pic_center">
   
     <link rel="alternative" href="/atom.xml" title="Autter" type="application/atom+xml">
   
@@ -160,64 +168,285 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Spark join 的三种实现方式" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+
+
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/28/最大连续子序列/" class="archive-article-date >
+      <header class="article-header">
+        
+        
+        <a href="/2020/08/26/Spark join 的三种实现方式/" class="archive-article-date >
 
 
 
-  	<time datetime="2020-02-28T12:23:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-28</time>
+  	<time datetime="2020-08-26T11:32:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-26</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/28/最大连续子序列/">DP - 最大连续子序列和问题的变形</a>
-    </h1>
-  
+        <!--显示阅读次数-->
+        
+        
+           
+        <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+      
+    
+          <a class="cloud-tie-join-count" href="javascript:void(0);" style="color:gray;font-size:14px;">
+            <span class="icon-sort"></span>
+         
+            <span class="archive-article-date">
+                阅读量 <span id="busuanzi_value_page_pv"></span>
+            </span>
+          </a>
+        
+        
 
-        <div class="article-info info-on-right">
-          
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="得-Join-者的天下！"><a href="#得-Join-者的天下！" class="headerlink" title="得 Join 者的天下！"></a>得 Join 者的天下！</h2><h4 id="来学学SparkSQL-join-的三种实现方式！"><a href="#来学学SparkSQL-join-的三种实现方式！" class="headerlink" title="来学学SparkSQL join 的三种实现方式！"></a>来学学SparkSQL join 的三种实现方式！</h4><a id="more"></a> 
+
+<h4 id="mysql-的-join-是怎么实现的？"><a href="#mysql-的-join-是怎么实现的？" class="headerlink" title="mysql 的 join 是怎么实现的？"></a>mysql 的 join 是怎么实现的？</h4><p>当前 SparkSql 支持三种 join 算法：1、shuffle hash join, 2、broadcast hash join ，3、sort merge join。其中前两者是基于 hash join 的衍生的，只不过是在hash join 之前先进行broadcast 或则 shuffle,然后再进行 hash join，几十年前数据库就有了 hash join 的方法，spark 的这两种 join 只是加上了分布式的场景和思想而已。接下来，我们先说说什么是 hash join。                                           </p>
+<h4 id="先说说-hash-join"><a href="#先说说-hash-join" class="headerlink" title="先说说 hash join"></a>先说说 hash join</h4><ul>
+<li><strong>确定 Bulid Table 和 Probe Table：</strong> ,bulid table 使用 join key 构建 Hash Table,而 Probe Table 使用 join key 进行一个探测，探测成功就可以 join 在一起。</li>
+<li><strong>构建 Hash Table：</strong>通常情况下，小表会作为 bulid table,大表作为 probe table(探测表),依次读取 Bulid Table的数据，对于每一行数据根据 join key 进行 hash,hash 到对应的 bucket, 生成 Hash Table 中一条记录。数据缓存在内存里，如果内存放不下，需dump 到外存。</li>
+<li><strong>探测：</strong>再次扫描 probe table 的数据，使用相同的 hash 函数映射 HashTable 中的记录，映射成功之后再检查 join 的条件，如果匹配成功就可以将二者 join 在一起。<br><img src="https://img-blog.csdnimg.cn/20200827001347992.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>基本流程可以参考上图，这里有两个小问题需要关注：</li>
+<li><input disabled type="checkbox"> 1、 <strong>hash join 的性能如何？</strong> 很显然，hash join 是两个表，每个表只扫描一次，时间复杂度可认为是 O（a+b），较之最极端的 笛卡尔积 O(a*b),性能提高了不是一点半点。</li>
+<li><input disabled type="checkbox"> 2、 <strong>为什么 bulid table 选择小表, probe table 选择大表？</strong> 因为在构建 hash table 时最好能将其全部加载到内存，这样才效率最高，这也说明了为什么 hash join 算法只适合至少有一个小表的场景，对于两个大表的join 场景并不适用，两个大表的 join ,可选用 sort merge join。</li>
+</ul>
+<p><strong>Hash join 总结：</strong> hash join 是传统数据库的单机 join 算法，在分布式环境下经过一定的分布式改造，说到底就是尽可能利用分布式计算资源进行分布式并行化计算，以提高整体的速度 。Hash join 的分布式改造一般有两种经典方案：</p>
+<h3 id="broadcast-hash-join"><a href="#broadcast-hash-join" class="headerlink" title="broadcast hash join"></a>broadcast hash join</h3><p>  当有限维度表和事实表进行 join 时，为了避免 shuffle ,将有限维度表（不超过10M），也就是小表全部数据分发到大表所在的分区结点上，供事实表（大表）使用，分别并发地与大表上地分区记录进行 hash join。brocast hash join 使得excutor 上存储小表地全部数据，一定程度牺牲了空间，换取 shuffle 操作大量的耗时。</p>
+<ul>
+<li><input disabled type="checkbox"> a. broadcast 阶段：将小表广播分发到大表所在的所有excutor 节点。广播算法有很多，最简单的先发给driver ,driver 在统一分发到所有的 excutor ,要不就是基于 bittorrete 的 p2p 思路。</li>
+<li><input disabled type="checkbox"> b. hash join 阶段： 将每个 excutor 上执行单机版的 hash join，小表映射，大表试探。 </li>
+</ul>
+<h4 id="shuffle-hash-join"><a href="#shuffle-hash-join" class="headerlink" title="shuffle hash join"></a>shuffle hash join</h4><p>一旦小表数据量较大，此时不在适合广播分发，这种情况下，利用  key 相同分区必然相同地原理，将两张表分别按照 join key 进行重新分区，这样相同 join key 的记录就会重分布到同一节点上，两张表中的数据会被重新分布到集群中的相应节点上（这个过程称为shuffle），再对表中的相应分区的数据分别进行 hash join ，这样即在一定程度上减少了 driver 广播一侧表的压力，也减少了 excutor 端拉取整张广播表的内存消耗，并充分利用了集群资源并行化。<br><img src="https://img-blog.csdnimg.cn/20200827091833817.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzIzNjA5NjAz,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p>
+<h4 id="Sort-Merge-join"><a href="#Sort-Merge-join" class="headerlink" title="Sort-Merge join"></a>Sort-Merge join</h4><p> 当两张表都非常大的时候，显然无论采用以上哪种 join 都会对计算内存造成很大压力，这是因为 join 时采用的hash join ，是将一侧表的数据完全加载到内存中，这时候就采用 sort-merge join 算法，主要分为三个阶段：</p>
+<ul>
+<li><input disabled type="checkbox"> a.  Shuffle 阶段：将两张大表根据 join key 重新分区，两张表的数据会分布到整个集群中，以便分布式的处理；</li>
+<li><input disabled type="checkbox"> b. Sort 阶段：对单个分区节点的两表数据（一个节点上一个分区），分别进行排序；</li>
+<li><input disabled type="checkbox"> c. Merge 阶段：对排序好的两张分区表数据执行 join 操作。 join 操作很简单，分别遍历两个有序序列，碰到相同 join key 就 Merge 输出，否则取更小一边继续往下遍历。</li>
+</ul>
+<p><strong>分析：</strong> 同样都需要shuffle ,sort-merge join还需要一个分区内排序过程，shuffle hash join 不是比 sort-merge join 更有效率吗？那为什么在两张大表的情况下使用 sort-merge join算法呢？这和 Spark 的shuffle 实现有关系，目前spark 的shuffle 实现都适用  sort-based shuffle 算法，因此在经过 hash shuffle 之后 partition 数据都是按照key 排序的，因此理论上可以认为是数据经过shuffle 之后不需要 sort的，可以直接 merge 。<br>                经过以上分析，可以明确每种 join 算法都有自己的使用场景，数据库设计时最好避免大表与大表的 查询，SparkSQL 也可以根据内存资源、带宽资源适量将参数 spark.sql.autoBroadcastJoinThreshold（默认是 10M） 调大，让更多 join 实际执行为 broadcast hash join。 </p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>Join 是传统数据库中的一个高级特性，尤其对于 mysql 而言更是，因为mysql 目前对 join 的支持还比较有限，只支持 Nested-Loop Join 算法，因此OLAP 场景下很少使用 mysql.不过目前Mysql 的新版本开始支持 hash join了，也许将来 Mysql 可以处理一些小规模的 OLAP 业务。<br>传统数据库单机模式做 join 的场景有限，所以也建议尽量少使用 join 。<strong>然而大数据领域不同，Join 是标配，OLAP 业务离不开表与表之间的关联，对 Join 的支持成熟度一定程度上决定了系统的性能，夸张点说，”得 join 者得天下 “</strong> </p>
+<p><a href="http://hbasefly.com/2017/03/19/sparksql-basic-join/" target="_blank" rel="noopener">参考链接</a></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>有用就收藏噻<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">-DP</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">SparkSQL join</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://www.autterman.cn/2020/08/26/Spark join 的三种实现方式/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/25/每天一道 leetcode——875. 爱吃香蕉的珂珂/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">875. 爱吃香蕉的珂珂</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#得-Join-者的天下！"><span class="toc-number">1.</span> <span class="toc-text">得 Join 者的天下！</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#来学学SparkSQL-join-的三种实现方式！"><span class="toc-number">1.0.1.</span> <span class="toc-text">来学学SparkSQL join 的三种实现方式！</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#mysql-的-join-是怎么实现的？"><span class="toc-number">1.0.2.</span> <span class="toc-text">mysql 的 join 是怎么实现的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#先说说-hash-join"><span class="toc-number">1.0.3.</span> <span class="toc-text">先说说 hash join</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#broadcast-hash-join"><span class="toc-number">1.1.</span> <span class="toc-text">broadcast hash join</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#shuffle-hash-join"><span class="toc-number">1.1.1.</span> <span class="toc-text">shuffle hash join</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Sort-Merge-join"><span class="toc-number">1.1.2.</span> <span class="toc-text">Sort-Merge join</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#总结"><span class="toc-number">1.1.3.</span> <span class="toc-text">总结</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+      <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
     
 
+  
+  
+  
+
+  
+
+  
+
+  
+
+
+
+<section id="comments" class="comments">
+  <style>
+    .comments{margin:30px;padding:10px;background:#fff}
+    @media screen and (max-width:800px){.comments{margin:auto;padding:10px;background:#fff}}
+  </style>
+  <div id="vcomment" class="comment"></div> 
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+   var notify = 'false' == true ? true : false;
+   var verify = 'false' == true ? true : false;
+    window.onload = function() {
+        new Valine({
+            el: '.comment',
+            notify: notify,
+            verify: verify,
+            app_id: "QjqRJw26rzp3w3Q2OwoyGlwX-gzGzoHsz",
+            app_key: "mcoFTCIhFKTKK8kNncSI8ume",
+            placeholder: "To be better !",
+            avatar:"mm"
+        });
+    }
+</script>
+  </section>
 
           </div>
         </div>
@@ -272,9 +501,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -655,17 +884,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             </button>
 
             <div class="pswp__caption">
-                <div class="pswp__caption__center"></div>
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
-  </div>
-</body>
-</html>ion">
                 <div class="pswp__caption__center"></div>
             </div>
 
